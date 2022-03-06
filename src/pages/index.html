@@ -8,9 +8,26 @@
   <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
 
-<body class="bg-violet-700">
+<body class="bg-fb-bg">
+  <header class="w-full h-[56px] bg-fb-header fixed top-0 left-0 right-0"></header>
+  
   <!-- all your standard template here -->
+  <main class="container min-h-[100vh] pt-main-span flex">
+      <!-- 左側資訊欄 -->
+      <div class="w-full hidden sticky top-main-span max-w-[360px] h-full lg:block">
+        <p class=" bg-blue-300">左側資訊欄</p>
+      </div>
 
+      <!-- 動態牆 -->
+      <div class="w-full max-w-[744px] mx-auto h-[200vh]">
+        <p class="bg-white">動態牆</p>
+      </div>
+
+      <!-- 右側聯絡人 -->
+      <div class="w-full hidden sticky top-main-span max-w-[360px] h-full lg:block">
+        <p class="bg-green-300">右側聯絡人</p>
+      </div>
+  </main>
   <!-- all your standard template here -->
 </body>
 </html>
