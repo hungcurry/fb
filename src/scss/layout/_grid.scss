@@ -1,0 +1,118 @@
+// Grid columns
+$grid-columns: 12 !default;
+$grid-gutter-width: 3rem !default;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+  "2xl": "1536px",
+) !default;
+
+$spacer: 1rem !default;
+$spacers: () !default;
+$spacers: map-merge(
+  (
+    "0": 0,
+    "1": 0.8rem,
+    "2": 1.6rem,
+    "3": 2.4rem,
+    "4": 3.2rem,
+    "5": 4rem,
+    "6": 4.8rem,
+  ),
+  $spacers
+);
+
+// Grid containers
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+) !default;
+
+// Breakpoint
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+  $min: map-get($breakpoints, $name);
+  @return if($min != 0, $min, null);
+}
+/*-------------------------*/
+/* grid
+---------------------------*/
+// container
+// .container {
+//   width: 100%;
+//   margin-right: auto;
+//   margin-left: auto;
+//   padding-right: ($grid-gutter-width / 2);
+//   padding-left: ($grid-gutter-width / 2);
+//   @each $breakpoint, $container-max-width in $container-max-widths {
+//     @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+//       max-width: $container-max-width;
+//     }
+//   }
+// }
+// .container-fluid {
+//   width: 100%;
+//   margin-right: auto;
+//   margin-left: auto;
+//   padding-right: ($grid-gutter-width / 2);
+//   padding-left: ($grid-gutter-width / 2);
+// }
+
+// row
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: calc($grid-gutter-width / -2);
+  margin-left: calc($grid-gutter-width / -2);
+  &.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+    > [class*="col-"] {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+  > * {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc($grid-gutter-width / 2);
+    padding-left: calc($grid-gutter-width / 2);
+  }
+}
+
+// col
+.col {
+  flex: 1 0 0%;
+}
+@for $i from 1 through ($grid-columns) {
+  .col-#{$i} {
+    flex: 0 0 auto;
+    width: percentage(calc($i / $grid-columns));
+  }
+}
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up(#{$breakpoint}) {
+    @for $i from 1 through ($grid-columns) {
+      .col-#{$breakpoint}-#{$i} {
+        flex: 0 0 auto;
+        width: percentage(calc($i / $grid-columns));
+      }
+    }
+  }
+}
