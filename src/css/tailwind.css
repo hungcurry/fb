@@ -8,9 +8,14 @@
     @apply m-5 bg-gray-300 text-black dark:bg-black dark:text-white;
   }
 }
-
 @layer components {
   .card-box {
     @apply xx:bg-green-400 box-border flex w-full rounded-lg bg-gray-800 px-4 py-3 sm:bg-red-400 md:bg-yellow-400;
+  }
+  .popover-btn {
+    @apply w-[39px] h-[39px] p-2.5 ml-2 rounded-full bg-fb-popover flex justify-center items-center cursor-pointer active:bg-fb-active;
+  }
+  .popover-panel {
+    @apply w-[300px] p-4 bg-fb-header rounded-lg shadow-lg absolute right-0 top-[4.5rem] border border-fb-input lg:w-[360px];
   }
 }
