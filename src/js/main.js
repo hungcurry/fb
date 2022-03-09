@@ -126,3 +126,39 @@ function renderLeftList() {
   leftBlock.innerHTML = htmlStr;
 }
 renderLeftList();
+
+
+//  ------------- 右側相關 -------------
+const rightBlock = document.querySelector("#right-block");
+let rightAry = [];
+axios.get('https://randomuser.me/api/?results=15')
+  .then((res)=>{
+    rightAry = res.data.results;
+    console.log(rightAry);
+    renderRightList();
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+function renderRightItem( firstName, lastName ,imageUrl) {
+  const item = `
+  <div class="flex items-center justify-items-center w-full py-2 px-1 mb-6 rounded hover:bg-fb-input cursor-pointer">
+    <div class="relative w-[32px] cursor-pointer mr-6">
+      <div class="overflow-hidden rounded-full">
+        <img class="object-cover" src="${imageUrl}" alt="" />
+      </div>
+      <div class="w-[8px] h-[8px] rounded-full bg-green-500 absolute bottom-0 right-0 ring-gray-900 ring"></div>
+    </div>
+    <p class="text-white text-2xl">${firstName} ${lastName}</p>
+  </div>
+  `
+  return item;
+}
+function renderRightList() {
+  let htmlStr = `<p class="text-2xl text-gray-400 mb-6">聯絡人</p>`;
+  rightAry.forEach((item) => {
+    htmlStr += renderRightItem( item.name.first , item.name.last , item.picture.medium);
+  });
+  rightBlock.innerHTML = htmlStr;
+}
+
