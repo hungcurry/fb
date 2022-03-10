@@ -192,11 +192,34 @@
 
     <!-- 動態牆 -->
     <div class="w-full max-w-[744px] mx-auto h-[200vh]">
-      <p class="bg-white">動態牆</p>
+      <!-- 限時動態 -->
+      <div class="relative">
+        <div class="flex overflow-x-auto lg:px-6" id="story-list">
+          <div class="flex-1 px-[4px] min-w-[120px] cursor-pointer">
+            <div class="h-full flex flex-col">
+              <div class="overflow-hidden flex-1">
+                <img class="object-cover w-full h-full duration-500 hover:scale-105" src="https://i.ibb.co/G2jbbtS/cat1.jpg"/>
+              </div>
+              <div class="bg-fb-card pt-6 px-2 pb-2 relative">
+                <button class="w-[32px] h-[32px] p-2 absolute -top-7 left-[calc(50%-16px)] bg-fb rounded-full focus:outline-none 
+                ring-fb-card ring flex justify-center items-center">
+                  <img src="https://bruce-fe-fb.web.app/image/plus.svg" />
+                </button>
+                <p class="w-full text-center text-white">建立限時動態</p>
+              </div>
+            </div>
+          </div>
+          <!-- renderStoryItem -->
+        </div>
+        <button class="absolute popover-btn -right-3 top-[calc(50%-22.5px)] z-10 w-[45px] h-[45px]">
+          <img src="https://bruce-fe-fb.web.app/image/right-arrow.svg" />
+        </button>
+      </div>
+
     </div>
 
     <!-- 右側聯絡人 -->
-    <div id="right-block" class="w-full hidden sticky top-main-span max-w-[360px] h-full lg:block"></div>
+    <div id="right-block" class="w-full hidden sticky top-main-span max-w-[360px] h-full pl-4 lg:block"></div>
   </main>
   <!-- all your standard template here -->
 </body>

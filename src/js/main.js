@@ -134,7 +134,6 @@ let rightAry = [];
 axios.get('https://randomuser.me/api/?results=15')
   .then((res)=>{
     rightAry = res.data.results;
-    console.log(rightAry);
     renderRightList();
   })
   .catch((err) => {
@@ -162,3 +161,39 @@ function renderRightList() {
   rightBlock.innerHTML = htmlStr;
 }
 
+//  ------------- 限時動態相關 -------------
+const storyList = document.querySelector('#story-list');
+function renderStoryItem() {
+  for (let i = 0; i < 8; i++) {
+    const elDiv = document.createElement('div');
+    elDiv.classList.add('flex-1' , 'px-[4px]' , 'min-w-[120px]' ,'cursor-pointer');
+    const item = `
+    <div class="relative overflow-hidden" id="story-${i}">
+      <div id="story-mask-${i}" class="hidden absolute w-full h-full top-0 left-0 bg-orange/30 z-20"></div>
+      <div class="w-[32px] h-[32px] absolute top-4 left-4 ring-4 ring-fb bg-fb-card rounded-full flex justify-center items-center z-10">
+        <p class="text-white text-sm">阿貓</p>
+      </div>
+      <div class="absolute w-full h-full top-0 left-0 bg-gradient-to-b from-orange-600/30 to-transparent"></div>
+      <img class="w-full h-full duration-500" src="https://i.ibb.co/9sPFqKz/cat2.jpg"/>
+      <p class="absolute bottom-2 left-2 text-white">白爛貓</p>
+    </div>
+    `
+    elDiv.innerHTML = item;
+
+    // mask move
+    elDiv.addEventListener("mouseenter", function(e) {
+      const img = document.querySelector(`#story-${i} > img`);
+      const mask = document.querySelector(`#story-mask-${i}`);
+      img.classList.add('scale-105');
+      mask.classList.remove('hidden');
+    });
+    elDiv.addEventListener("mouseleave", function(e) {
+      const img = document.querySelector(`#story-${i} > img`);
+      const mask = document.querySelector(`#story-mask-${i}`);
+      img.classList.remove('scale-105');
+      mask.classList.add('hidden');
+    });
+    storyList.appendChild(elDiv);
+  }
+}
+renderStoryItem();
