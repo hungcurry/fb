@@ -197,3 +197,35 @@ function renderStoryItem() {
   }
 }
 renderStoryItem();
+
+//  ------------- 包廂輪播相關 -------------
+function renderLiveItem() {
+  const swiperWrapperLive = document.querySelector("#swiper-wrapper-live");
+  for (let i = 0; i < 20; i++) {
+    const elDiv = document.createElement("div");
+    elDiv.classList.add('swiper-slide');
+    const item = `
+      <div class="w-[55px]">
+        <div class="relative w-[40px] cursor-pointer">
+          <div class="overflow-hidden rounded-full">
+            <img src="https://i.ibb.co/G2jbbtS/cat1.jpg"/>
+          </div>
+          <div class="w-[10px] h-[10px] rounded-full bg-green-500 absolute bottom-0 right-0 ring-gray-900 ring"></div>
+        </div>
+      </div>
+    `
+    elDiv.innerHTML = item;
+    swiperWrapperLive.appendChild(elDiv);
+  }
+    new Swiper(".fb-live", {
+      slidesPerView: 'auto',
+      spaceBetween: 0,
+      loop: false,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      slidesPerView: "auto",
+    });
+}
+renderLiveItem();
