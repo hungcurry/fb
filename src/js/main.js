@@ -12,11 +12,16 @@ import scss from "all.scss";
 import tailwind from "tailwind.css";
 
 
+
 //---js---
 import axios from "axios";
 // babel/polyfill 主要檔案
 import "core-js/stable";
 import "regenerator-runtime/runtime";
+// import Swiper JS
+import Swiper, { Navigation, Pagination } from 'swiper'
+
+
 
 
 
@@ -28,7 +33,7 @@ function openPanel(index) {
     item.classList.add('hidden');
     // 防止觸發到 window 事件 , 避免點擊 內容區塊關閉
     item.addEventListener('click' , function(e) {
-      console.log(`popoverPanel`);
+      // console.log(`popoverPanel`);
       e.stopPropagation();
     })
     if(index === idx + 1) {
@@ -37,14 +42,14 @@ function openPanel(index) {
   })
 };
 function clickPopoverFn(e){
-  console.log('popoverBtn');
+  // console.log('popoverBtn');
   e.stopPropagation();
   let id = Number(e.currentTarget.getAttribute('id').substr(3));
   openPanel(id);
 };
 
 window.addEventListener('click' , function(e){
-  console.log('windows');
+  // console.log('windows');
   openPanel(-1);
 });
 popoverBtn.forEach( function(item){
@@ -217,15 +222,19 @@ function renderLiveItem() {
     elDiv.innerHTML = item;
     swiperWrapperLive.appendChild(elDiv);
   }
-    new Swiper(".fb-live", {
-      slidesPerView: 'auto',
-      spaceBetween: 0,
-      loop: false,
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      slidesPerView: "auto",
-    });
 }
 renderLiveItem();
+
+const swiper = new Swiper(".fb-live", {
+  // configure Swiper to use modules
+  modules: [Navigation, Pagination],
+  slidesPerView: 'auto',
+  spaceBetween: 0,
+  loop: false,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  slidesPerView: "auto",
+});
+
