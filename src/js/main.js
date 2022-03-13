@@ -237,4 +237,17 @@ const swiper = new Swiper(".fb-live", {
   },
   slidesPerView: "auto",
 });
-
+//  ------------- 貼文牆相關 -------------
+const postWall = document.querySelectorAll(".postWall");
+const loadAll = document.querySelectorAll(".loadBlock");
+function renderPostWall(){
+  setTimeout(() => {
+    postWall.forEach((item) => {
+      item.classList.remove('hidden');
+    })
+    loadAll.forEach((item) => {
+      item.classList.add('hidden');
+    })
+  },1500);
+};
+renderPostWall();
