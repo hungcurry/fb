@@ -185,6 +185,6 @@ module.exports = {
     open: true,
     hot: false, 
     liveReload: true,
-    host: '192.168.1.102',
+    host: '192.168.1.101',
   },  
 };
