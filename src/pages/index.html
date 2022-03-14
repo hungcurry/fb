@@ -39,12 +39,18 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
             d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
         </svg>
-        <input type="text" class="w-full bg-transparent text-white focus:outline-none" placeholder="搜尋 Facebook" />
+        <input type="text" class="w-full bg-transparent text-white focus:outline-none border-0" placeholder="搜尋 Facebook" />
       </div>
     </div>
     <!-- header right -->
     <div class="flex items-center relative">
 
+      <div class="hidden items-center mr-4 lg:flex">
+        <div class="w-[40px] rounded-full overflow-hidden">
+          <img src="https://i.ibb.co/G2jbbtS/cat1.jpg"/>
+        </div>
+        <p class="text-left text-2xl pl-2 text-gray-400">白爛貓</p>
+      </div> 
       <button class="popover-btn nav-btn" id="btn1">
         <img src="https://bruce-fe-fb.web.app/image/plus.svg" />
       </button>
@@ -70,115 +76,75 @@
             </svg>
           </div>
           <div class="flex-1">
-            <p class="text-sm text-white mb-[2px]">貼文</p>
-            <p class="text-xs text-gray-400">在動態消息分享貼文。</p>
+            <p class="text-xl text-white mb-[2px]">貼文</p>
+            <p class="text-xl text-gray-400">在動態消息分享貼文。</p>
           </div>
         </div>
       </div>
       <!-- 下拉選單 2 messenger -->
       <div class="popover-panel hidden" id="panel2">
-        <p class="text-white mb-3 text-2xl">Messsenger</p>
-        <div class="
-          bg-fb-input
-          rounded-full
-          py-1
-          px-3
-          flex
-          items-center
-          mb-4
-        ">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px] mr-2" fill="none" viewBox="0 0 24 24"
-          stroke="#9ba3af">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-        </svg>
-        <input type="text" class="w-full bg-transparent focus:outline-none text-white" placeholder="搜尋 Messsenger" />
+        <p class="text-white mb-3 text-2xl">Messenger</p>
+        <div class="bg-fb-input rounded-full py-1 px-3 flex items-center mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px] mr-2" fill="none" viewBox="0 0 24 24"
+            stroke="#9ba3af">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <input type="text" class="w-full bg-transparent focus:outline-none text-white border-0" placeholder="搜尋 Messenger" />
         </div>
-        <div class="
-          flex
-          items-center
-          mb-2
-          p-2
-          rounded-lg
-          hover:bg-fb-input
-          cursor-pointer
-        ">
+        <div class="flex items-center mb-2 p-2 rounded-lg hover:bg-fb-input cursor-pointer">
         <div class="w-[50px] h-[50px] rounded-full overflow-hidden mr-3">
-          <img class="w-full object-cover" src="https://bruce-fe-fb.web.app/image/avator.png" alt="" />
+          <img class="w-full object-cover" src="https://i.ibb.co/G2jbbtS/cat1.jpg" alt="" />
         </div>
         <div class="flex-1">
-          <p class="text-base text-white mb-[2px]">布魯斯</p>
-          <p class="text-sm text-gray-400">TailwindCSS讚讚！・1分鐘前</p>
+          <p class="text-xl text-white mb-[2px]">白爛貓</p>
+          <p class="text-xl text-gray-400">白爛貓 雜貨鋪讚讚！・1分鐘前</p>
         </div>
         </div>
       </div>
       <!-- 下拉選單 3 notification -->
       <div class="popover-panel hidden" id="panel3">
         <p class="text-white mb-3 text-2xl">通知</p>
-        <div class="
-                                flex
-                                items-center
-                                mb-2
-                                p-2
-                                rounded-lg
-                                hover:bg-fb-input
-                                cursor-pointer
-                              ">
+        <div class="flex items-center mb-2 p-2 rounded-lg hover:bg-fb-input cursor-pointer">
           <div class="w-[50px] h-[50px] rounded-full overflow-hidden mr-3">
-            <img class="w-full object-cover" src="https://bruce-fe-fb.web.app/image/avator.png" alt="" />
+            <img class="w-full object-cover" src="https://i.ibb.co/G2jbbtS/cat1.jpg" alt=""/>
           </div>
           <div class="flex-1">
-            <p class="text-sm text-white mb-[2px]">
-              布魯斯發佈了一門新課程！
-            </p>
-            <p class="text-xs text-fb">1分鐘前</p>
+            <p class="text-xl text-white mb-[2px]">白爛貓 87分雜貨鋪開幕囉！！</p>
+            <p class="text-xl text-fb">1分鐘前</p>
           </div>
         </div>
       </div>
       <!-- 下拉選單 4 more -->
       <div class="popover-panel hidden" id="panel4">
-        <div class="
-            flex
-            items-center
-            mb-2
-            p-2
-            rounded-lg
-            hover:bg-fb-input
-            cursor-pointer
-          ">
+        <div class="flex items-center mb-2 p-2 rounded-lg hover:bg-fb-input cursor-pointer">
           <div class="w-[50px] h-[50px] rounded-full overflow-hidden mr-3">
-            <img class="w-full object-cover" src="https://bruce-fe-fb.web.app/image/avator.png" alt="" />
+            <img class="w-full object-cover" src="https://i.ibb.co/G2jbbtS/cat1.jpg" alt=""/>
           </div>
           <div class="flex-1">
-            <p class="text-base text-white mb-[2px]">布魯斯</p>
-            <p class="text-sm text-gray-400">查看你的個人檔案</p>
+            <p class="text-xl text-white mb-[2px]">白爛貓</p>
+            <p class="text-xl text-gray-400">查看你的個人檔案</p>
           </div>
         </div>
-        <div class="
-            flex
-            p-1
-            mb-2
-            items-center
-            hover:bg-fb-input
-            rounded-lg
-            cursor-pointer
-          ">
-          <div class="
-              bg-fb-input
-              rounded-full
-              p-2
-              mr-2
-              flex
-              justify-center
-              items-center
-            ">
+        <div class="flex p-1 mb-4 items-center hover:bg-fb-input rounded-lg cursor-pointer" id="color-theme-switcher">
+          <div class="bg-fb-input rounded-full p-2 mr-2 flex justify-center items-center">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="22" height="22" viewBox="0 0 24 24"
               stroke="white">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
             </svg>
           </div>
-          <p class="flex-1 text-white">登出</p>
+          <p class="flex-1 text-white text-2xl">暗夜</p>
+        </div>
+        <div class="flex p-1 mb-2 items-center hover:bg-fb-input rounded-lg cursor-pointer">
+          <div class="bg-fb-input rounded-full p-2 mr-2 flex justify-center items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="22" height="22" viewBox="0 0 24 24"
+              stroke="white">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+            </svg>
+          </div>
+          <p class="flex-1 text-white text-2xl">登出</p>
         </div>
       </div>
 
@@ -195,11 +161,11 @@
 
       <!-- 限時動態 -->
       <div class="relative">
-        <div class="flex overflow-x-auto lg:px-6" id="story-list">
+        <div class="flex overflow-x-auto no-scrollbar lg:px-6" id="story-list">
           <div class="flex-1 px-[4px] min-w-[120px] cursor-pointer">
             <div class="h-full flex flex-col">
               <div class="overflow-hidden flex-1">
-                <img class="object-cover w-full h-full duration-500 hover:scale-105" src="https://i.ibb.co/G2jbbtS/cat1.jpg"/>
+                <img class="object-cover w-full h-full duration-500 hover:scale-105 select-none" src="https://i.ibb.co/G2jbbtS/cat1.jpg"/>
               </div>
               <div class="bg-fb-card pt-6 px-2 pb-2 relative">
                 <button class="w-[32px] h-[32px] p-2 absolute -top-7 left-[calc(50%-16px)] bg-fb rounded-full focus:outline-none 

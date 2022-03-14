@@ -179,7 +179,7 @@ function renderStoryItem() {
         <p class="text-white text-sm">阿貓</p>
       </div>
       <div class="absolute w-full h-full top-0 left-0 bg-gradient-to-b from-orange-600/30 to-transparent"></div>
-      <img class="w-full h-full duration-500" src="https://i.ibb.co/9sPFqKz/cat2.jpg"/>
+      <img class="w-full h-full duration-500 select-none" src="https://i.ibb.co/9sPFqKz/cat2.jpg"/>
       <p class="absolute bottom-2 left-2 text-white">白爛貓</p>
     </div>
     `
