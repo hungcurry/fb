@@ -154,7 +154,79 @@
   <!-- all your standard template here -->
   <main class="container min-h-[100vh] pt-main-span flex">
     <!-- 左側資訊欄 -->
-    <div id="left-block" class="w-full hidden sticky top-main-span max-w-[360px] h-full pl-4 lg:block"></div>
+    <div id="left-block" class="w-full hidden sticky top-main-span max-w-[360px] h-full pl-4 lg:block">
+      <ul id="left-block-list">
+        <li class="flex items-center justify-items-center w-full p-2 mb-6 rounded hover:bg-fb-input cursor-pointer">
+          <div class="w-[32px] overflow-hidden rounded-full mr-4">
+            <img class="object-cover" src="https://media1.giphy.com/media/H1eshAZvAfiofm870b/giphy.webp" alt="" />
+          </div>
+          <p class="text-white text-2xl">白爛貓</p>
+        </li>
+        <li class="flex items-center justify-items-center w-full p-2 mb-6 rounded hover:bg-fb-input cursor-pointer">
+          <div class="w-[32px] overflow-hidden rounded-full mr-4">
+            <img class="object-cover" src="https://bruce-fe-fb.web.app/image/left/activity.svg" alt="" />
+          </div>
+          <p class="text-white text-2xl">活動</p>
+        </li>
+        <li class="flex items-center justify-items-center w-full p-2 mb-6 rounded hover:bg-fb-input cursor-pointer">
+          <div class="w-[32px] overflow-hidden rounded-full mr-4">
+            <img class="object-cover" src="https://bruce-fe-fb.web.app/image/left/cloudy.png" alt="" />
+          </div>
+          <p class="text-white text-2xl">天氣</p>
+        </li>
+        <li class="flex items-center justify-items-center w-full p-2 mb-6 rounded hover:bg-fb-input cursor-pointer">
+          <div class="w-[32px] overflow-hidden rounded-full mr-4">
+            <img class="object-cover" src="https://bruce-fe-fb.web.app/image/left/dynamic.svg" alt="" />
+          </div>
+          <p class="text-white text-2xl">災害應變中心</p>
+        </li>
+        <li class="flex items-center justify-items-center w-full p-2 mb-6 rounded hover:bg-fb-input cursor-pointer">
+          <div class="w-[32px] overflow-hidden rounded-full mr-4">
+            <img class="object-cover" src="https://bruce-fe-fb.web.app/image/left/facemask.svg" alt="" />
+          </div>
+          <p class="text-white text-2xl">新冠病毒資訊中心</p>
+        </li>
+        <li class="flex items-center justify-items-center w-full p-2 mb-6 rounded hover:bg-fb-input cursor-pointer">
+          <div class="w-[32px] overflow-hidden rounded-full mr-4">
+            <img class="object-cover" src="https://bruce-fe-fb.web.app/image/left/friend.svg" alt="" />
+          </div>
+          <p class="text-white text-2xl">社團</p>
+        </li>
+      </ul>
+      <!-- button -->
+      <div class="w-full p-2 mb-6 rounded hover:bg-fb-input cursor-pointer">
+        <!-- open -->
+        <div id="left-more-btn">
+          <div class="flex items-center justify-items-center">
+            <div class=" bg-fb-input rounded-full p-2 mr-4 flex justify-center items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-[22px] w-[22px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+            <p class="text-white text-2xl w-full">顯示更多</p>
+          </div>
+        </div>
+        <!-- close -->
+        <div class="hidden" id="left-fold-btn">
+          <div class="flex items-center justify-items-center">
+            <div class=" bg-fb-input rounded-full p-2 mr-4 flex justify-center items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-[22px] w-[22px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+              </svg>
+            </div>
+            <p class="text-white text-2xl w-full">顯示較少</p>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+      
+    </div>
 
     <!-- 動態牆 -->
     <div class="w-full max-w-[744px] mx-auto px-4 pb-10">
@@ -553,3 +625,5 @@
   <!-- all your standard template here -->
 </body>
 </html>
+
+

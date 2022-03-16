@@ -5,6 +5,7 @@ module.exports = {
     'bg-red-500',
     'text-3xl',
     'lg:text-4xl',
+    'h-[627px]',
   ],
   darkMode: 'class', // 'media自動' or 'class手動'
   theme: {

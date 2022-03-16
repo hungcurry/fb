@@ -57,32 +57,10 @@ popoverBtn.forEach( function(item){
 });
 
 //  ------------- 左側相關 -------------
-const leftBlock = document.querySelector("#left-block");
+const leftBlockList = document.querySelector("#left-block-list");
+const leftMoreBtn = document.querySelector('#left-more-btn');
+const leftFoldBtn = document.querySelector('#left-fold-btn');
 const leftArr = [
-  {
-    name: "白爛貓",
-    img: "https://media1.giphy.com/media/H1eshAZvAfiofm870b/giphy.webp",
-  },
-  {
-    name: "活動",
-    img: "https://bruce-fe-fb.web.app/image/left/activity.svg",
-  },
-  {
-    name: "天氣",
-    img: "https://bruce-fe-fb.web.app/image/left/cloudy.png",
-  },
-  {
-    name: "災害應變中心",
-    img: "https://bruce-fe-fb.web.app/image/left/dynamic.svg",
-  },
-  {
-    name: "新冠病毒資訊中心",
-    img: "https://bruce-fe-fb.web.app/image/left/facemask.svg",
-  },
-  {
-    name: "社團",
-    img: "https://bruce-fe-fb.web.app/image/left/friend.svg",
-  },
   {
     name: "企業管理平台",
     img: "https://bruce-fe-fb.web.app/image/left/job.png",
@@ -111,27 +89,66 @@ const leftArr = [
     name: "Watch",
     img: "https://bruce-fe-fb.web.app/image/left/watchingTv.svg",
   },
+  {
+    name: "廣告管理員",
+    img: "https://i.ibb.co/6bFz3s2/C949oxkze-S.png",
+  },
+  {
+    name: "動態回顧",
+    img: "https://i.ibb.co/zZWnQnf/lqym-E2i-RETE.png",
+  },
+  {
+    name: "最新資訊",
+    img: "https://i.ibb.co/b6jWqqx/k-Y1-UFd6n2-O.png",
+  },
+  {
+    name: "我的珍藏",
+    img: "https://i.ibb.co/BLYFmxv/oc-BBGg-g-Rd5.png",
+  },
 ];
 function renderLeftItem(name, imageUrl) {
   const item = `
-    <div class="flex items-center justify-items-center w-full p-2 mb-6 rounded hover:bg-fb-input cursor-pointer">
+    <li class="flex items-center justify-items-center w-full p-2 mb-6 rounded hover:bg-fb-input cursor-pointer">
       <div class="w-[32px] overflow-hidden rounded-full mr-4">
         <img class="object-cover" src="${imageUrl}" alt="" />
       </div>
       <p class="text-white text-2xl">${name}</p>
-    </div>
+    </li>
   `;
   return item;
 }
 function renderLeftList() {
-  let htmlStr = "";
-  leftArr.forEach((item) => {
-    htmlStr += renderLeftItem(item.name , item.img);
+  const elDiv = document.createElement('div');
+  let height = '';
+  // open
+  leftMoreBtn.addEventListener('click',function(e){
+    height = `${ leftArr.length * 57 }`;
+    // console.log(height);
+    elDiv.classList.add('list','invisible', 'duration-700' , 'h-0' , 'opacity-0' , 'overflow-hidden' , 'transition-all');
+    let htmlStr = "";
+    leftArr.forEach((item) => {
+      htmlStr += renderLeftItem(item.name , item.img);
+    });
+    elDiv.innerHTML = htmlStr;
+    leftBlockList.appendChild(elDiv);
+
+    setTimeout(() => {
+      elDiv.classList.remove('invisible',  'opacity-0' ,'h-0');
+      elDiv.classList.add(`h-[${height}px]`);
+      leftMoreBtn.classList.add('hidden');
+      leftFoldBtn.classList.remove('hidden');
+    },700);
   });
-  leftBlock.innerHTML = htmlStr;
+  // close
+  leftFoldBtn.addEventListener('click',function(e){
+    elDiv.classList.remove(`h-[${height}px]` , 'list');
+    elDiv.classList.add('invisible',  'opacity-0' ,'h-0');
+    leftFoldBtn.classList.add('hidden');
+    leftMoreBtn.classList.remove('hidden');
+    elDiv.innerHTML = "";
+  });
 }
 renderLeftList();
-
 
 //  ------------- 右側相關 -------------
 const rightBlock = document.querySelector("#right-block");
