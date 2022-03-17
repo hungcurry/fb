@@ -108,7 +108,7 @@ const leftArr = [
 ];
 function renderLeftItem(name, imageUrl) {
   const item = `
-    <li class="flex items-center justify-items-center w-full p-2 mb-6 rounded hover:bg-fb-input cursor-pointer">
+    <li class="flex items-center w-full p-2 mb-6 rounded hover:bg-fb-input cursor-pointer">
       <div class="w-[32px] overflow-hidden rounded-full mr-4">
         <img class="object-cover" src="${imageUrl}" alt="" />
       </div>
@@ -163,7 +163,7 @@ axios.get('https://randomuser.me/api/?results=15')
   })
 function renderRightItem( firstName, lastName ,imageUrl) {
   const item = `
-  <div class="flex items-center justify-items-center w-full py-2 px-1 mb-6 rounded hover:bg-fb-input cursor-pointer">
+  <div class="flex items-center w-full py-2 px-1 mb-6 rounded hover:bg-fb-input cursor-pointer">
     <div class="relative w-[32px] cursor-pointer mr-6">
       <div class="overflow-hidden rounded-full">
         <img class="object-cover" src="${imageUrl}" alt="" />
@@ -268,3 +268,85 @@ function renderPostWall(){
   },1500);
 };
 renderPostWall();
+
+//  ------------- modal-------------
+const modal = document.querySelector('#modal');
+const loginBtn = document.querySelector('#login');
+const closeBtnAll = document.querySelectorAll('.js-close');
+const body = document.querySelector('body');
+
+loginBtn.addEventListener('click', function(){
+  modal.classList.remove("opacity-0" , "pointer-events-none");
+  body.classList.add('overflow-y-hidden');
+});
+closeBtnAll.forEach((item)=>{
+  item.addEventListener('click', function(){
+    modal.classList.add("opacity-0" , "pointer-events-none");
+    body.classList.remove('overflow-y-hidden');
+  })
+});
+
+//  ------------- 你的捷徑／modal捷徑選單 -------------
+let shortcutAry = [
+  '白爛貓家族俱樂部' , 
+  '漫漫人生' ,
+  'Front-End Taiwan' , 
+  'Costco好市多',
+  'MASS FOR THE DEAD' , 
+  'JavaScript.tw' ,
+  '白爛貓家族俱樂部' , 
+  '漫漫人生' ,
+  'Front-End Taiwan' , 
+  'Costco好市多',
+  'MASS FOR THE DEAD' , 
+];
+// 你的捷徑
+const shortcutList = document.querySelector("#shortcutList");
+function renderShortcutItem( name , i ) {
+  const item = `
+  <li class="flex items-center  w-full p-2 mb-6 rounded hover:bg-fb-input cursor-pointer">
+    <div class="w-[32px] overflow-hidden rounded-xl mr-4">
+      <img class="object-cover" src="https://picsum.photos/800/800/?random=${ i }" alt="" />
+    </div>
+    <p class="text-white text-2xl">${name}</p>
+  </li>
+  `
+  return item;
+}
+function renderShortcutList() {
+  let htmlStr = '';
+  shortcutAry.forEach((item , i) => {
+    htmlStr += renderShortcutItem( item , i+1 );
+  });
+  shortcutList.innerHTML = htmlStr;
+}
+renderShortcutList();
+// modal捷徑
+const editShortcutList = document.querySelector("#edit-shortcutList");
+function renderEditShortcutItem( name , i ) {
+  const item = `
+  <li class="flex items-center justify-between w-full p-2 mb-6 rounded">
+    <div class="flex items-center w-full ">
+      <div class="w-[32px] overflow-hidden rounded-xl mr-4">
+        <img class="object-cover" src="https://picsum.photos/800/800/?random=${ i }" alt="" />
+      </div>
+      <p class="text-white text-2xl">${name}</p>
+    </div>
+    <select name="select" class="px-16 py-2.5 rounded-lg text-2xl text-center focus:border-fb-input focus:ring-fb-input">
+      <option value="" selected disable hidden>請選擇</option>
+      <option value="自動排序">自動排序</option>
+      <option value="置頂">置頂</option>
+      <option value="隱藏">隱藏</option>
+    </select>
+  </li>
+  `
+  return item;
+}
+function renderEditShortcutList() {
+  let htmlStr = '';
+  shortcutAry.forEach((item , i) => {
+    htmlStr += renderEditShortcutItem( item , i+1 );
+  });
+  editShortcutList.innerHTML = htmlStr;
+}
+renderEditShortcutList();
