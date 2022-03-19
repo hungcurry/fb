@@ -51,3 +51,8 @@
 .no-scrollbar {
   scrollbar-width: none;
 }
+
+// 右側相關 
+.js-contactPerson:hover > .message{
+  display: flex;
+}

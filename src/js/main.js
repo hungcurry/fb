@@ -156,21 +156,51 @@ let rightAry = [];
 axios.get('https://randomuser.me/api/?results=15')
   .then((res)=>{
     rightAry = res.data.results;
+    console.log(rightAry);
     renderRightList();
   })
   .catch((err) => {
     console.log(err);
   })
-function renderRightItem( firstName, lastName ,imageUrl) {
+function renderRightItem(obj) {
   const item = `
-  <div class="flex items-center w-full py-2 px-1 mb-6 rounded hover:bg-fb-input cursor-pointer">
+  <div class="flex items-center w-full py-4 px-2 mb-6 rounded hover:bg-fb-input cursor-pointer relative js-contactPerson">
+
     <div class="relative w-[32px] cursor-pointer mr-6">
       <div class="overflow-hidden rounded-full">
-        <img class="object-cover" src="${imageUrl}" alt="" />
+        <img class="object-cover" src="${obj.picture.large}" alt="" />
       </div>
       <div class="w-[8px] h-[8px] rounded-full bg-green-500 absolute bottom-0 right-0 ring-gray-900 ring"></div>
     </div>
-    <p class="text-white text-2xl">${firstName} ${lastName}</p>
+    <p class="text-white text-2xl">${obj.name.first} ${obj.name.last}</p>
+
+    <!-- message-->
+    <div class="message absolute  w-[400px] top-[50%] left-[-402px] translate-y-[-50%] 
+    items-center p-6 rounded-xl bg-fb-input cursor-pointer border border-gray-600 hidden">
+      <div class="w-full flex">
+        <div class="w-[80px] h-[80px] cursor-pointer mr-6 rounded-full shrink-0  ring-3 ring-fb ring-offset-2 ring-offset-fb-input">
+          <div class="overflow-hidden rounded-full">
+            <img class="object-cover" src="${obj.picture.large}" alt=""/>
+          </div>
+        </div>
+        <div class="flex-1 text-2xl text-white">
+          <h4 class="text-4xl mb-6">${obj.name.first} ${obj.name.last}</h4>
+          <div class="flex items-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-[24px] h-[24px] mr-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
+            </svg>
+            <p>${obj.gender}</p>
+          </div>
+          <div class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-[24px] h-[24px] mr-3 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <p class="break-all">${obj.email}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
   `
   return item;
@@ -178,10 +208,16 @@ function renderRightItem( firstName, lastName ,imageUrl) {
 function renderRightList() {
   let htmlStr = `<p class="text-2xl text-gray-400 mb-6">聯絡人</p>`;
   rightAry.forEach((item) => {
-    htmlStr += renderRightItem( item.name.first , item.name.last , item.picture.medium);
+    htmlStr += renderRightItem(item);
   });
   rightBlock.innerHTML = htmlStr;
 }
+
+
+
+
+
+
 
 //  ------------- 限時動態相關 -------------
 const storyList = document.querySelector('#story-list');
@@ -350,3 +386,5 @@ function renderEditShortcutList() {
   editShortcutList.innerHTML = htmlStr;
 }
 renderEditShortcutList();
+
+
