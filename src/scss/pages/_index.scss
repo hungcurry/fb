@@ -53,6 +53,16 @@
 }
 
 // 右側相關 
+.js-contactPerson::before{
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 125%;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
 .js-contactPerson:hover > .message{
   display: flex;
 }

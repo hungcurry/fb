@@ -156,29 +156,33 @@ let rightAry = [];
 axios.get('https://randomuser.me/api/?results=15')
   .then((res)=>{
     rightAry = res.data.results;
-    console.log(rightAry);
     renderRightList();
   })
   .catch((err) => {
     console.log(err);
   })
 function renderRightItem(obj) {
+  let state = "";
+  let online = ""
+  if(obj.dob.age >= 50){
+    state = `ring-2 ring-fb ring-offset-2 ring-offset-fb-input`;
+    online = `text-white`;
+  }
   const item = `
-  <div class="flex items-center w-full py-4 px-2 mb-6 rounded hover:bg-fb-input cursor-pointer relative js-contactPerson">
-
-    <div class="relative w-[32px] cursor-pointer mr-6">
+  <div class="flex items-center w-full py-4 px-2 mb-6 rounded hover:bg-fb-input cursor-pointer relative text-gray-600 js-contactPerson">
+  
+    <div class="w-[32px] cursor-pointer mr-6 rounded-full ${state}">
       <div class="overflow-hidden rounded-full">
         <img class="object-cover" src="${obj.picture.large}" alt="" />
       </div>
-      <div class="w-[8px] h-[8px] rounded-full bg-green-500 absolute bottom-0 right-0 ring-gray-900 ring"></div>
     </div>
-    <p class="text-white text-2xl">${obj.name.first} ${obj.name.last}</p>
+    <p class="text-2xl ${online}">${obj.name.first} ${obj.name.last}</p>
 
     <!-- message-->
-    <div class="message absolute  w-[400px] top-[50%] left-[-402px] translate-y-[-50%] 
-    items-center p-6 rounded-xl bg-fb-input cursor-pointer border border-gray-600 hidden">
+    <div class="message absolute  w-[400px] top-[50%] left-[-410px] translate-y-[-50%] 
+    items-center p-6 rounded-xl bg-fb-input cursor-pointer border border-gray-400 z-50 hidden">
       <div class="w-full flex">
-        <div class="w-[80px] h-[80px] cursor-pointer mr-6 rounded-full shrink-0  ring-3 ring-fb ring-offset-2 ring-offset-fb-input">
+        <div class="w-[80px] h-[80px] cursor-pointer mr-6 rounded-full shrink-0 ${state}">
           <div class="overflow-hidden rounded-full">
             <img class="object-cover" src="${obj.picture.large}" alt=""/>
           </div>
@@ -212,12 +216,6 @@ function renderRightList() {
   });
   rightBlock.innerHTML = htmlStr;
 }
-
-
-
-
-
-
 
 //  ------------- 限時動態相關 -------------
 const storyList = document.querySelector('#story-list');
