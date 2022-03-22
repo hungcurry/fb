@@ -151,9 +151,9 @@ function renderLeftList() {
 renderLeftList();
 
 //  ------------- 右側相關 -------------
-const rightBlock = document.querySelector("#right-block");
+const contactPerson = document.querySelector("#contactPerson");
 let rightAry = [];
-axios.get('https://randomuser.me/api/?results=15')
+axios.get('https://randomuser.me/api/?results=50')
   .then((res)=>{
     rightAry = res.data.results;
     renderRightList();
@@ -164,13 +164,13 @@ axios.get('https://randomuser.me/api/?results=15')
 function renderRightItem(obj) {
   let state = "";
   let online = ""
-  if(obj.dob.age >= 50){
+  if(obj.dob.age >= 15){
     state = `ring-2 ring-fb ring-offset-2 ring-offset-fb-input`;
     online = `text-white`;
   }
   const item = `
   <div class="flex items-center w-full py-4 px-2 mb-6 rounded hover:bg-fb-input cursor-pointer relative text-gray-600 js-contactPerson">
-  
+
     <div class="w-[32px] cursor-pointer mr-6 rounded-full ${state}">
       <div class="overflow-hidden rounded-full">
         <img class="object-cover" src="${obj.picture.large}" alt="" />
@@ -180,7 +180,7 @@ function renderRightItem(obj) {
 
     <!-- message-->
     <div class="message absolute  w-[400px] top-[50%] left-[-410px] translate-y-[-50%] 
-    items-center p-6 rounded-xl bg-fb-input cursor-pointer border border-gray-400 z-50 hidden">
+    items-center p-6 rounded-xl bg-fb-input cursor-pointer border border-gray-400 z-50">
       <div class="w-full flex">
         <div class="w-[80px] h-[80px] cursor-pointer mr-6 rounded-full shrink-0 ${state}">
           <div class="overflow-hidden rounded-full">
@@ -210,17 +210,91 @@ function renderRightItem(obj) {
   return item;
 }
 function renderRightList() {
-  let htmlStr = `<p class="text-2xl text-gray-400 mb-6">聯絡人</p>`;
+  let htmlStr = `<p class="text-2xl text-gray-400 mb-6 border-t border-gray-700 pt-6">聯絡人</p>`;
   rightAry.forEach((item) => {
     htmlStr += renderRightItem(item);
   });
-  rightBlock.innerHTML = htmlStr;
-}
+  contactPerson.innerHTML = htmlStr;
+};
+
+//  ------------- 右側相關-AD區塊 -------------
+const adBlock = document.querySelectorAll('.ad-block');
+const adBtn = document.querySelectorAll('.js-adBtn');
+const adPanel = document.querySelectorAll('.ad-panel');
+
+adBlock.forEach( function(item){
+  // 防止觸發到 window 事件 , 避免點擊 內容區塊關閉
+  item.addEventListener('click' , function(e) {
+    e.stopPropagation();
+  })
+  item.addEventListener('mouseenter', mouseenterFn);
+  item.addEventListener('mouseleave', mouseLeaveFn);
+});
+function mouseenterFn(){
+  let ary = Array.from(this.children);
+  ary.find(function(item){
+    if(item.classList.contains('js-adBtn') ){
+      item.classList.remove('hidden');
+      item.addEventListener("click" ,clickADFn);
+    };
+  });
+};
+function mouseLeaveFn(){
+  let ary = Array.from(this.children);
+  ary.find(function(item){
+    if(item.classList.contains('js-adBtn') ){
+      item.classList.add('hidden');
+    }
+  })
+};
+
+function clickADFn(e){
+  e.stopPropagation();
+  let elBtn = e.currentTarget;
+  let id = Number(elBtn.getAttribute('id').substr(6));
+
+  // 再次點擊關閉
+  elBtn.classList.add('active');
+  if(elBtn.classList.contains('active')){
+    elBtn.addEventListener('click', doubleClickCloseFn);
+  }
+
+  elBtn.parentNode.removeEventListener('mouseleave', mouseLeaveFn);
+  openADPanel(id);
+};
+function doubleClickCloseFn(){
+  closeFn();
+};
+
+function openADPanel(index) {
+  adPanel.forEach( function(item , idx){
+    item.classList.add('hidden');
+    // 防止觸發到 window 事件 , 避免點擊 內容區塊關閉
+    item.addEventListener('click' , function(e) {
+      e.stopPropagation();
+    })
+    if(index === idx + 1) {
+      item.classList.remove('hidden');
+    }
+  })
+};
+function closeFn(){
+  openADPanel(-1);
+  adBtn.forEach((btn) => {
+    btn.classList.add('hidden');
+    btn.classList.remove('active');
+    btn.removeEventListener('click' , doubleClickCloseFn);
+  })
+  adBlock.forEach((item)=>{
+    item.addEventListener('mouseleave', mouseLeaveFn);
+  })
+};
+window.addEventListener('click' , closeFn);
 
 //  ------------- 限時動態相關 -------------
 const storyList = document.querySelector('#story-list');
 function renderStoryItem() {
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i < 6; i++) {
     const elDiv = document.createElement('div');
     elDiv.classList.add('flex-1' , 'px-[4px]' , 'min-w-[120px]' ,'cursor-pointer');
     const item = `
@@ -384,5 +458,6 @@ function renderEditShortcutList() {
   editShortcutList.innerHTML = htmlStr;
 }
 renderEditShortcutList();
+
 
 

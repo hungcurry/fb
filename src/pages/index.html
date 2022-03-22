@@ -621,7 +621,90 @@
     </div>
 
     <!-- 右側聯絡人 -->
-    <div id="right-block" class="w-full hidden sticky top-main-span max-w-[360px] h-full pl-6 lg:block z-30"></div>
+    <div id="right-block" class="w-full hidden sticky top-main-span max-w-[360px] h-full pl-6 lg:block z-30">
+      <!-- AD -->
+      <p class="text-2xl text-gray-400 mb-6">贊助</p>
+      <div class="flex items-center w-full py-2 px-2 mb-3 rounded cursor-pointer text-white relative ad-block">
+        <div class="w-[130px] mr-6 shrink-0">
+          <a href="javascript:;" class="rounded-2xl block">
+            <img class="object-cover user-drag" src="https://scontent.ftpe7-3.fna.fbcdn.net/v/t45.1600-4/274347005_23850348510820767_5397592372270915344_n.jpg?stp=cp0_dst-jpg_p960x960_q75_spS444&_nc_cat=108&ccb=1-5&_nc_sid=67cdda&_nc_ohc=XQqD7BqjnZwAX8xzGOE&_nc_ht=scontent.ftpe7-3.fna&oh=00_AT_Yb30gXEOkV-YEdanwMKO5MOgzlVTHT7AlJ1ni_KAfvQ&oe=623BE831" alt="" />
+          </a>
+        </div>
+        <div>
+          <p class="mb-3 select-none">HOLA 特力和樂</p>
+          <p class="text-xl text-gray-400 tracking-wide select-none">trplus.com.tw</p>
+        </div>
+        <button class="popover-btn w-[36px] h-[36px] absolute right-3 top-[-5px] hidden z-10 js-adBtn" id="ad-btn1">
+          <img src="https://bruce-fe-fb.web.app/image/more.svg" alt="">
+        </button>
+        <!-- 下拉選單 1 more -->
+        <div class="popover-panel ad-panel z-20 hidden" id="ad-panel1">
+          <div class="flex p-1 mb-4 items-center hover:bg-fb-input rounded-lg cursor-pointer" id="color-theme-switcher">
+            <div class="popover-btn bg-fb-input rounded-full p-2 mr-2 flex justify-center items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-[22px] w-[22px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div class="flex-1">
+              <p class="flex-1 text-white text-2xl">隱藏廣告</p>
+              <p class="text-xl text-gray-400">不要再看到這則廣告</p>
+            </div>
+          </div>
+          <div class="flex p-1 mb-2 items-center hover:bg-fb-input rounded-lg cursor-pointer">
+            <div class="popover-btn bg-fb-input rounded-full p-2 mr-2 flex justify-center items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-[22px] w-[22px]" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div class="flex-1">
+              <p class="text-white text-2xl">檢舉廣告</p>
+              <p class="text-xl text-gray-400">為什麼會看到這廣告</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex items-center w-full py-2 px-2 mb-6 rounded cursor-pointer text-white relative ad-block">
+        <div class="w-[130px] mr-6 shrink-0">
+          <a href="javascript:;" class="rounded-2xl block">
+            <img class="object-cover user-drag" src="https://scontent.ftpe8-3.fna.fbcdn.net/v/t45.1600-4/275511040_23849536778630071_6020715533438144923_n.jpg?stp=cp0_dst-jpg_p296x100_q75_spS444&_nc_cat=1&ccb=1-5&_nc_sid=67cdda&_nc_ohc=4BhLrJKfgxkAX-Mpysp&_nc_ht=scontent.ftpe8-3.fna&oh=00_AT8DPITOxIkfPUCsRMhk2V87_cY84-Ikd2E81F6fbVmDBQ&oe=623BB449" alt="" />
+          </a>
+        </div>
+        <div>
+          <p class="mb-3 select-none">ASUS ExpertCenter 商用桌上型電腦  購機享回饋!</p>
+          <p class="text-xl text-gray-400 tracking-wide select-none">shop.asus.com</p>
+        </div>
+        <button class="popover-btn w-[36px] h-[36px] absolute right-3 top-[-5px] hidden z-10 js-adBtn" id="ad-btn2">
+          <img src="https://bruce-fe-fb.web.app/image/more.svg" alt="">
+        </button>
+        <!-- 下拉選單 2 more -->
+        <div class="popover-panel ad-panel z-20 hidden" id="ad-panel2">
+          <div class="flex p-1 mb-4 items-center hover:bg-fb-input rounded-lg cursor-pointer" id="color-theme-switcher">
+            <div class="popover-btn bg-fb-input rounded-full p-2 mr-2 flex justify-center items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-[22px] w-[22px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div class="flex-1">
+              <p class="flex-1 text-white text-2xl">隱藏廣告</p>
+              <p class="text-xl text-gray-400">不要再看到這則廣告</p>
+            </div>
+          </div>
+          <div class="flex p-1 mb-2 items-center hover:bg-fb-input rounded-lg cursor-pointer">
+            <div class="popover-btn bg-fb-input rounded-full p-2 mr-2 flex justify-center items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-[22px] w-[22px]" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div class="flex-1">
+              <p class="text-white text-2xl">檢舉廣告</p>
+              <p class="text-xl text-gray-400">為什麼會看到這廣告</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 聯絡人 -->
+      <div id="contactPerson"></div>
+    </div>
   </main>
   <!-- all your standard template here -->
 
@@ -657,5 +740,6 @@
   </div>
 </body>
 </html>
+
 
 

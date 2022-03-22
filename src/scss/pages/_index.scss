@@ -63,6 +63,16 @@
   transform: translateY(-50%);
   z-index: 10;
 }
-.js-contactPerson:hover > .message{
-  display: flex;
+
+.message{
+  visibility: hidden;
 }
+.js-contactPerson:hover > .message,
+.js-contactPerson:focus > .message,
+.js-contactPerson:focus-within > .message{
+  visibility: visible;
+}
+.user-drag {
+  -webkit-user-drag: none;
+}
+
