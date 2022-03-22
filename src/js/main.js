@@ -153,7 +153,7 @@ renderLeftList();
 //  ------------- 右側相關 -------------
 const contactPerson = document.querySelector("#contactPerson");
 let rightAry = [];
-axios.get('https://randomuser.me/api/?results=50')
+axios.get('https://randomuser.me/api/?results=20')
   .then((res)=>{
     rightAry = res.data.results;
     renderRightList();
@@ -164,7 +164,7 @@ axios.get('https://randomuser.me/api/?results=50')
 function renderRightItem(obj) {
   let state = "";
   let online = ""
-  if(obj.dob.age >= 15){
+  if(obj.dob.age >= 50){
     state = `ring-2 ring-fb ring-offset-2 ring-offset-fb-input`;
     online = `text-white`;
   }
@@ -440,7 +440,7 @@ function renderEditShortcutItem( name , i ) {
       </div>
       <p class="text-white text-2xl">${name}</p>
     </div>
-    <select name="select" class="px-16 py-2.5 rounded-lg text-2xl text-center focus:border-fb-input focus:ring-fb-input">
+    <select name="select" class="px-16 py-2.5 rounded-lg text-2xl text-center text-white bg-fb-input focus:border-fb-input focus:ring-fb-input">
       <option value="" selected disable hidden>請選擇</option>
       <option value="自動排序">自動排序</option>
       <option value="置頂">置頂</option>

@@ -52,6 +52,11 @@
   scrollbar-width: none;
 }
 
+// header menu
+.menu-item-active{
+  border-color: #2e89ff !important;
+}
+
 // 右側相關 
 .js-contactPerson::before{
   content: "";
@@ -63,7 +68,6 @@
   transform: translateY(-50%);
   z-index: 10;
 }
-
 .message{
   visibility: hidden;
 }
