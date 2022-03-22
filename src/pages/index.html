@@ -44,29 +44,29 @@
     </div>
 
     <!-- header menu -->
-    <ul class="hidden text-white lg:flex lg:items-center">
-      <li class="flex items-center mr-6 border-b-4 border-fb-header menu-item-active">
+    <ul class="navbox hidden text-white lg:flex lg:items-center">
+      <li class="nav flex items-center mr-6 border-b-4 border-transparent js-nav-active" id="n1">
         <a href="javascript:;" class="block px-20 py-4">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-[30px] w-[30px]" viewBox="0 0 20 20" fill="currentColor">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-[30px] w-[30px] text-fb" viewBox="0 0 20 20" fill="currentColor">
             <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
           </svg>
         </a>
       </li>
-      <li class="flex items-center mr-6 border-b-4 border-transparent">
+      <li class="nav flex items-center mr-6 border-b-4 border-transparent" id="n2">
         <a href="javascript:;" class="block px-20 py-4">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-[30px] w-[30px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
           </svg>
         </a>
       </li>
-      <li class="flex items-center mr-6 border-b-4 border-transparent">
+      <li class="nav flex items-center mr-6 border-b-4 border-transparent" id="n3">
         <a href="javascript:;" class="block px-20 py-4">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-[30px] w-[30px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
           </svg>
         </a>
       </li>
-      <li class="flex items-center mr-6 border-b-4 border-transparent">
+      <li class="nav flex items-center mr-6 border-b-4 border-transparent" id="n4">
         <a href="javascript:;" class="block px-20 py-4">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-[30px] w-[30px]" viewBox="0 0 20 20" fill="currentColor">
             <path d="M10 3.5a1.5 1.5 0 013 0V4a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-.5a1.5 1.5 0 000 3h.5a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-.5a1.5 1.5 0 00-3 0v.5a1 1 0 01-1 1H6a1 1 0 01-1-1v-3a1 1 0 00-1-1h-.5a1.5 1.5 0 010-3H4a1 1 0 001-1V6a1 1 0 011-1h3a1 1 0 001-1v-.5z" />
@@ -262,396 +262,402 @@
       </div>
     </div>
 
-    <!-- 動態牆 -->
-    <div class="w-full max-w-[744px] mx-auto px-4 pb-10">
+    <div id="p1" class="w-full page text-white hidden">
+      <!-- 動態牆 -->
+      <div class="w-full max-w-[744px] mx-auto px-4 pb-10">
 
-      <!-- 限時動態 -->
-      <div class="relative">
-        <div class="flex overflow-x-auto no-scrollbar lg:px-6" id="story-list">
-          <div class="flex-1 px-[4px] min-w-[120px] cursor-pointer">
-            <div class="h-full flex flex-col">
-              <div class="overflow-hidden flex-1">
-                <img class="object-cover w-full h-full duration-500 hover:scale-105 select-none" src="https://i.ibb.co/G2jbbtS/cat1.jpg"/>
-              </div>
-              <div class="bg-fb-card pt-6 px-2 pb-2 relative">
-                <button class="w-[32px] h-[32px] p-2 absolute -top-7 left-[calc(50%-16px)] bg-fb rounded-full focus:outline-none 
-                ring-fb-card ring flex justify-center items-center">
-                  <img src="https://bruce-fe-fb.web.app/image/plus.svg" />
-                </button>
-                <p class="w-full text-center text-white">建立限時動態</p>
-              </div>
-            </div>
-          </div>
-          <!-- renderStoryItem -->
-        </div>
-        <button class="absolute popover-btn -right-3 top-[calc(50%-22.5px)] z-10 w-[45px] h-[45px]">
-          <img src="https://bruce-fe-fb.web.app/image/right-arrow.svg" />
-        </button>
-      </div>
-
-      <!-- 在想些什麼？ -->
-      <div class="card">
-        <div class="flex pb-4">
-          <div class="w-[40px] rounded-full overflow-hidden mr-3">
-            <img src="https://i.ibb.co/G2jbbtS/cat1.jpg"/>
-          </div>
-          <div class="bg-fb-input flex-1 rounded-full flex items-center">
-            <p class="text-left text-2xl pl-3 text-gray-400 ">
-              白爛貓，在想些什麼？
-            </p>
-          </div>
-        </div> 
-        <div class="border-t border-gray-700 flex pt-3">
-          <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
-            <div class="w-[16px]">
-              <img src="https://bruce-fe-fb.web.app/image/camera.svg" alt="" />
-            </div>
-            <p class="text-gray-400 text-2xl pl-1.5">直播視訊</p>
-          </button>
-          <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
-            <div class="w-[16px]">
-              <img src="https://bruce-fe-fb.web.app/image/photo.svg" alt="" />
-            </div>
-            <p class="text-gray-400 text-2xl pl-1.5">相片／影片</p>
-          </button>
-          <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
-            <div class="w-[16px]">
-              <img src="https://bruce-fe-fb.web.app/image/feel.svg" alt="" />
-            </div>
-            <p class="text-gray-400 text-2xl pl-1.5">感受／活動</p>
-          </button>
-        </div>
-      </div>
-
-      <!-- 開包廂 -->
-      <div class="card pr-0 flex">
-        <!-- Swiper -->
-        <div class="swiper fb-live">
-          <div class="swiper-wrapper" id="swiper-wrapper-live">
-            <div class="swiper-slide">
-              <button class="mr-4 px-4 h-[40px] ring-2 ring-gray-600 flex items-center rounded-full focus:outline-none">
-                <div class="w-[24px]">
-                  <img src="https://bruce-fe-fb.web.app/image/video.svg" alt="" />
+        <!-- 限時動態 -->
+        <div class="relative">
+          <div class="flex overflow-x-auto no-scrollbar lg:px-6" id="story-list">
+            <div class="flex-1 px-[4px] min-w-[120px] cursor-pointer">
+              <div class="h-full flex flex-col">
+                <div class="overflow-hidden flex-1">
+                  <img class="object-cover w-full h-full duration-500 hover:scale-105 select-none" src="https://i.ibb.co/G2jbbtS/cat1.jpg"/>
                 </div>
-                <p class="ml-2 text-fb text-xl font-bold">建立包廂</p>
+                <div class="bg-fb-card pt-6 px-2 pb-2 relative">
+                  <button class="w-[32px] h-[32px] p-2 absolute -top-7 left-[calc(50%-16px)] bg-fb rounded-full focus:outline-none 
+                  ring-fb-card ring flex justify-center items-center">
+                    <img src="https://bruce-fe-fb.web.app/image/plus.svg" />
+                  </button>
+                  <p class="w-full text-center text-white">建立限時動態</p>
+                </div>
+              </div>
+            </div>
+            <!-- renderStoryItem -->
+          </div>
+          <button class="absolute popover-btn -right-3 top-[calc(50%-22.5px)] z-10 w-[45px] h-[45px]">
+            <img src="https://bruce-fe-fb.web.app/image/right-arrow.svg" />
+          </button>
+        </div>
+
+        <!-- 在想些什麼？ -->
+        <div class="card">
+          <div class="flex pb-4">
+            <div class="w-[40px] rounded-full overflow-hidden mr-3">
+              <img src="https://i.ibb.co/G2jbbtS/cat1.jpg"/>
+            </div>
+            <div class="bg-fb-input flex-1 rounded-full flex items-center">
+              <p class="text-left text-2xl pl-3 text-gray-400 ">
+                白爛貓，在想些什麼？
+              </p>
+            </div>
+          </div> 
+          <div class="border-t border-gray-700 flex pt-3">
+            <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
+              <div class="w-[16px]">
+                <img src="https://bruce-fe-fb.web.app/image/camera.svg" alt="" />
+              </div>
+              <p class="text-gray-400 text-2xl pl-1.5">直播視訊</p>
+            </button>
+            <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
+              <div class="w-[16px]">
+                <img src="https://bruce-fe-fb.web.app/image/photo.svg" alt="" />
+              </div>
+              <p class="text-gray-400 text-2xl pl-1.5">相片／影片</p>
+            </button>
+            <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
+              <div class="w-[16px]">
+                <img src="https://bruce-fe-fb.web.app/image/feel.svg" alt="" />
+              </div>
+              <p class="text-gray-400 text-2xl pl-1.5">感受／活動</p>
+            </button>
+          </div>
+        </div>
+
+        <!-- 開包廂 -->
+        <div class="card pr-0 flex">
+          <!-- Swiper -->
+          <div class="swiper fb-live">
+            <div class="swiper-wrapper" id="swiper-wrapper-live">
+              <div class="swiper-slide">
+                <button class="mr-4 px-4 h-[40px] ring-2 ring-gray-600 flex items-center rounded-full focus:outline-none">
+                  <div class="w-[24px]">
+                    <img src="https://bruce-fe-fb.web.app/image/video.svg" alt="" />
+                  </div>
+                  <p class="ml-2 text-fb text-xl font-bold">建立包廂</p>
+                </button>
+              </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </div>
+
+        <!-- 貼文牆 -->
+        <div class="postWall card pb-0 px-0 hidden">
+          <!-- 貼文標題 -->
+          <div class="flex px-4">
+            <div class="w-[44px] rounded-full overflow-hidden mr-3">
+              <img src="https://i.ibb.co/G2jbbtS/cat1.jpg"/>
+            </div>
+            <div class="flex-1">
+              <p class="text-white">白爛貓 87分雜貨鋪</p>
+              <div class="flex items-center text-gray-400 text-2xl">
+                <div class="text-xl">5小時</div>
+                <div>．</div>
+                <div class="w-[14px]">
+                  <img class="w-full" src="https://bruce-fe-fb.web.app/image/earth.svg"/>
+                </div>
+              </div>
+            </div>
+            <button class="w-[12px] focus:outline-none">
+              <img src="https://bruce-fe-fb.web.app/image/more.svg" alt="" />
+            </button>
+          </div>
+          <!-- 貼文內文 -->
+          <p class="text-3xl text-gray-300 mt-3 px-4">【白爛貓】87分雜貨鋪 隆重開幕囉！！</p>
+          <!-- 貼文圖片 -->
+          <a href="javascript:;" class="block mt-3">
+            <div class="w-full aspect-w-16 aspect-h-15 overflow-hidden">
+              <img src="https://i.ibb.co/P5DBVtW/cat3.jpg" class="object-cover w-full"/>
+            </div>
+            <div class="bg-fb-input w-full px-4 py-2 text-white">
+              <p class="text-gray-400 text-xl">WWW.xxxxxx.COM</p>
+              <p class="text-2xl">白爛貓 87分雜貨鋪開幕囉！！</p>
+            </div>
+          </a>
+          <!-- 讚、留言 -->
+          <div class="px-4">
+            <div class="border-b border-gray-700 flex justify-between py-3">
+              <div class="flex items-center">
+                <div class="w-[20px] mr-2">
+                  <img src="https://bruce-fe-fb.web.app/image/like-blue.svg" />
+                </div>
+                <p class="text-xl text-gray-400">990</p>
+              </div>
+              <div class="flex items-center">
+                <p class="text-xl text-gray-400 mr-2">4則留言</p>
+                <p class="text-xl text-gray-400">1次分享</p>
+              </div>
+            </div>
+            <div class="flex items-center py-2">
+              <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
+                <div class="w-[16px]">
+                  <img src="https://bruce-fe-fb.web.app/image/like.svg"alt=""/>
+                </div>
+                <p class="text-gray-400 text-xl pl-1.5">讚</p>
+              </button>
+              <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
+                <div class="w-[16px]">
+                  <img src="https://bruce-fe-fb.web.app/image/chat.svg"alt=""/>
+                </div>
+                <p class="text-gray-400 text-xl pl-1.5">留言</p>
+              </button>
+              <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
+                <div class="w-[16px]">
+                  <img src="https://bruce-fe-fb.web.app/image/share.svg"alt=""/>
+                </div>
+                <p class="text-gray-400 text-xl pl-1.5">分享</p>
               </button>
             </div>
           </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
         </div>
-      </div>
+        <div class="postWall card pb-0 px-0 hidden">
+          <!-- 貼文標題 -->
+          <div class="flex px-4">
+            <div class="w-[44px] rounded-full overflow-hidden mr-3">
+              <img src="https://i.ibb.co/G2jbbtS/cat1.jpg"/>
+            </div>
+            <div class="flex-1">
+              <p class="text-white">白爛貓 87分雜貨鋪</p>
+              <div class="flex items-center text-gray-400 text-2xl">
+                <div class="text-xl">5小時</div>
+                <div>．</div>
+                <div class="w-[14px]">
+                  <img class="w-full" src="https://bruce-fe-fb.web.app/image/earth.svg"/>
+                </div>
+              </div>
+            </div>
+            <button class="w-[12px] focus:outline-none">
+              <img src="https://bruce-fe-fb.web.app/image/more.svg" alt="" />
+            </button>
+          </div>
+          <!-- 貼文內文 -->
+          <p class="text-3xl text-gray-300 mt-3 px-4">【白爛貓】87分雜貨鋪 隆重開幕囉！！</p>
+          <!-- 貼文圖片 -->
+          <a href="javascript:;" class="block mt-3">
+            <div class="w-full aspect-w-16 aspect-h-15 overflow-hidden">
+              <img src="https://i.ibb.co/HNB3t6w/cat4.jpg" class="object-cover w-full"/>
+            </div>
+            <div class="bg-fb-input w-full px-4 py-2 text-white">
+              <p class="text-gray-400 text-xl">WWW.xxxxxx.COM</p>
+              <p class="text-2xl">白爛貓 87分雜貨鋪開幕囉！！</p>
+            </div>
+          </a>
+          <!-- 讚、留言 -->
+          <div class="px-4">
+            <div class="border-b border-gray-700 flex justify-between py-3">
+              <div class="flex items-center">
+                <div class="w-[20px] mr-2">
+                  <img src="https://bruce-fe-fb.web.app/image/like-blue.svg" />
+                </div>
+                <p class="text-xl text-gray-400">990</p>
+              </div>
+              <div class="flex items-center">
+                <p class="text-xl text-gray-400 mr-2">4則留言</p>
+                <p class="text-xl text-gray-400">1次分享</p>
+              </div>
+            </div>
+            <div class="flex items-center py-2">
+              <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
+                <div class="w-[16px]">
+                  <img src="https://bruce-fe-fb.web.app/image/like.svg"alt=""/>
+                </div>
+                <p class="text-gray-400 text-xl pl-1.5">讚</p>
+              </button>
+              <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
+                <div class="w-[16px]">
+                  <img src="https://bruce-fe-fb.web.app/image/chat.svg"alt=""/>
+                </div>
+                <p class="text-gray-400 text-xl pl-1.5">留言</p>
+              </button>
+              <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
+                <div class="w-[16px]">
+                  <img src="https://bruce-fe-fb.web.app/image/share.svg"alt=""/>
+                </div>
+                <p class="text-gray-400 text-xl pl-1.5">分享</p>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="postWall card pb-0 px-0 hidden">
+          <!-- 貼文標題 -->
+          <div class="flex px-4">
+            <div class="w-[44px] rounded-full overflow-hidden mr-3">
+              <img src="https://i.ibb.co/G2jbbtS/cat1.jpg"/>
+            </div>
+            <div class="flex-1">
+              <p class="text-white">白爛貓 87分雜貨鋪</p>
+              <div class="flex items-center text-gray-400 text-2xl">
+                <div class="text-xl">5小時</div>
+                <div>．</div>
+                <div class="w-[14px]">
+                  <img class="w-full" src="https://bruce-fe-fb.web.app/image/earth.svg"/>
+                </div>
+              </div>
+            </div>
+            <button class="w-[12px] focus:outline-none">
+              <img src="https://bruce-fe-fb.web.app/image/more.svg" alt="" />
+            </button>
+          </div>
+          <!-- 貼文內文 -->
+          <p class="text-3xl text-gray-300 mt-3 px-4">【白爛貓】87分雜貨鋪 隆重開幕囉！！</p>
+          <!-- 貼文圖片 -->
+          <a href="javascript:;" class="block mt-3">
+            <div class="w-full aspect-w-16 aspect-h-15 overflow-hidden">
+              <img src="https://i.ibb.co/Nrnh9Xy/cat5.jpg" class="object-cover w-full"/>
+            </div>
+            <div class="bg-fb-input w-full px-4 py-2 text-white">
+              <p class="text-gray-400 text-xl">WWW.xxxxxx.COM</p>
+              <p class="text-2xl">白爛貓 87分雜貨鋪開幕囉！！</p>
+            </div>
+          </a>
+          <!-- 讚、留言 -->
+          <div class="px-4">
+            <div class="border-b border-gray-700 flex justify-between py-3">
+              <div class="flex items-center">
+                <div class="w-[20px] mr-2">
+                  <img src="https://bruce-fe-fb.web.app/image/like-blue.svg" />
+                </div>
+                <p class="text-xl text-gray-400">990</p>
+              </div>
+              <div class="flex items-center">
+                <p class="text-xl text-gray-400 mr-2">4則留言</p>
+                <p class="text-xl text-gray-400">1次分享</p>
+              </div>
+            </div>
+            <div class="flex items-center py-2">
+              <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
+                <div class="w-[16px]">
+                  <img src="https://bruce-fe-fb.web.app/image/like.svg"alt=""/>
+                </div>
+                <p class="text-gray-400 text-xl pl-1.5">讚</p>
+              </button>
+              <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
+                <div class="w-[16px]">
+                  <img src="https://bruce-fe-fb.web.app/image/chat.svg"alt=""/>
+                </div>
+                <p class="text-gray-400 text-xl pl-1.5">留言</p>
+              </button>
+              <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
+                <div class="w-[16px]">
+                  <img src="https://bruce-fe-fb.web.app/image/share.svg"alt=""/>
+                </div>
+                <p class="text-gray-400 text-xl pl-1.5">分享</p>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="postWall card pb-0 px-0 hidden">
+          <!-- 貼文標題 -->
+          <div class="flex px-4">
+            <div class="w-[44px] rounded-full overflow-hidden mr-3">
+              <img src="https://i.ibb.co/G2jbbtS/cat1.jpg"/>
+            </div>
+            <div class="flex-1">
+              <p class="text-white">白爛貓 87分雜貨鋪</p>
+              <div class="flex items-center text-gray-400 text-2xl">
+                <div class="text-xl">5小時</div>
+                <div>．</div>
+                <div class="w-[14px]">
+                  <img class="w-full" src="https://bruce-fe-fb.web.app/image/earth.svg"/>
+                </div>
+              </div>
+            </div>
+            <button class="w-[12px] focus:outline-none">
+              <img src="https://bruce-fe-fb.web.app/image/more.svg" alt="" />
+            </button>
+          </div>
+          <!-- 貼文內文 -->
+          <p class="text-3xl text-gray-300 mt-3 px-4">【白爛貓】87分雜貨鋪 隆重開幕囉！！</p>
+          <!-- 貼文圖片 -->
+          <a href="javascript:;" class="block mt-3">
+            <div class="w-full aspect-w-16 aspect-h-15 overflow-hidden">
+              <img src="https://i.ibb.co/XsvbW3z/cat6.jpg" class="object-cover w-full"/>
+            </div>
+            <div class="bg-fb-input w-full px-4 py-2 text-white">
+              <p class="text-gray-400 text-xl">WWW.xxxxxx.COM</p>
+              <p class="text-2xl">白爛貓 87分雜貨鋪開幕囉！！</p>
+            </div>
+          </a>
+          <!-- 讚、留言 -->
+          <div class="px-4">
+            <div class="border-b border-gray-700 flex justify-between py-3">
+              <div class="flex items-center">
+                <div class="w-[20px] mr-2">
+                  <img src="https://bruce-fe-fb.web.app/image/like-blue.svg" />
+                </div>
+                <p class="text-xl text-gray-400">990</p>
+              </div>
+              <div class="flex items-center">
+                <p class="text-xl text-gray-400 mr-2">4則留言</p>
+                <p class="text-xl text-gray-400">1次分享</p>
+              </div>
+            </div>
+            <div class="flex items-center py-2">
+              <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
+                <div class="w-[16px]">
+                  <img src="https://bruce-fe-fb.web.app/image/like.svg"alt=""/>
+                </div>
+                <p class="text-gray-400 text-xl pl-1.5">讚</p>
+              </button>
+              <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
+                <div class="w-[16px]">
+                  <img src="https://bruce-fe-fb.web.app/image/chat.svg"alt=""/>
+                </div>
+                <p class="text-gray-400 text-xl pl-1.5">留言</p>
+              </button>
+              <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
+                <div class="w-[16px]">
+                  <img src="https://bruce-fe-fb.web.app/image/share.svg"alt=""/>
+                </div>
+                <p class="text-gray-400 text-xl pl-1.5">分享</p>
+              </button>
+            </div>
+          </div>
+        </div>
 
-      <!-- 貼文牆 -->
-      <div class="postWall card pb-0 px-0 hidden">
-        <!-- 貼文標題 -->
-        <div class="flex px-4">
-          <div class="w-[44px] rounded-full overflow-hidden mr-3">
-            <img src="https://i.ibb.co/G2jbbtS/cat1.jpg"/>
-          </div>
-          <div class="flex-1">
-            <p class="text-white">白爛貓 87分雜貨鋪</p>
-            <div class="flex items-center text-gray-400 text-2xl">
-              <div class="text-xl">5小時</div>
-              <div>．</div>
-              <div class="w-[14px]">
-                <img class="w-full" src="https://bruce-fe-fb.web.app/image/earth.svg"/>
-              </div>
+        <!-- 貼文牆 (Loading) -->
+        <div class="loadBlock card pb-0 px-0 animate-pulse">
+          <!-- 貼文標題 -->
+          <div class="flex px-4 items-center mb-4">
+            <div class="w-[44px] h-[44px] rounded-full overflow-hidden mr-3bg-fb-input"></div>
+            <div class="flex content-evenly flex-wrap w-[200px] h-[50px]">
+              <div class="bg-fb-input h-[16px] w-[200px] rounded-full"></div>
+              <div class="bg-fb-input h-[12px] w-[100px] rounded-full"></div>
             </div>
           </div>
-          <button class="w-[12px] focus:outline-none">
-            <img src="https://bruce-fe-fb.web.app/image/more.svg" alt="" />
-          </button>
+          <div class="w-full h-[260px] bg-fb-input"></div>
         </div>
-        <!-- 貼文內文 -->
-        <p class="text-3xl text-gray-300 mt-3 px-4">【白爛貓】87分雜貨鋪 隆重開幕囉！！</p>
-        <!-- 貼文圖片 -->
-        <a href="javascript:;" class="block mt-3">
-          <div class="w-full aspect-w-16 aspect-h-15 overflow-hidden">
-            <img src="https://i.ibb.co/P5DBVtW/cat3.jpg" class="object-cover w-full"/>
-          </div>
-          <div class="bg-fb-input w-full px-4 py-2 text-white">
-            <p class="text-gray-400 text-xl">WWW.xxxxxx.COM</p>
-            <p class="text-2xl">白爛貓 87分雜貨鋪開幕囉！！</p>
-          </div>
-        </a>
-        <!-- 讚、留言 -->
-        <div class="px-4">
-          <div class="border-b border-gray-700 flex justify-between py-3">
-            <div class="flex items-center">
-              <div class="w-[20px] mr-2">
-                <img src="https://bruce-fe-fb.web.app/image/like-blue.svg" />
-              </div>
-              <p class="text-xl text-gray-400">990</p>
-            </div>
-            <div class="flex items-center">
-              <p class="text-xl text-gray-400 mr-2">4則留言</p>
-              <p class="text-xl text-gray-400">1次分享</p>
+        <div class="loadBlock card pb-0 px-0 animate-pulse">
+          <!-- 貼文標題 -->
+          <div class="flex px-4 items-center mb-4">
+            <div class="w-[44px] h-[44px] rounded-full overflow-hidden mr-3bg-fb-input"></div>
+            <div class="flex content-evenly flex-wrap w-[200px] h-[50px]">
+              <div class="bg-fb-input h-[16px] w-[200px] rounded-full"></div>
+              <div class="bg-fb-input h-[12px] w-[100px] rounded-full"></div>
             </div>
           </div>
-          <div class="flex items-center py-2">
-            <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
-              <div class="w-[16px]">
-                <img src="https://bruce-fe-fb.web.app/image/like.svg"alt=""/>
-              </div>
-              <p class="text-gray-400 text-xl pl-1.5">讚</p>
-            </button>
-            <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
-              <div class="w-[16px]">
-                <img src="https://bruce-fe-fb.web.app/image/chat.svg"alt=""/>
-              </div>
-              <p class="text-gray-400 text-xl pl-1.5">留言</p>
-            </button>
-            <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
-              <div class="w-[16px]">
-                <img src="https://bruce-fe-fb.web.app/image/share.svg"alt=""/>
-              </div>
-              <p class="text-gray-400 text-xl pl-1.5">分享</p>
-            </button>
-          </div>
+          <div class="w-full h-[260px] bg-fb-input"></div>
         </div>
-      </div>
-      <div class="postWall card pb-0 px-0 hidden">
-        <!-- 貼文標題 -->
-        <div class="flex px-4">
-          <div class="w-[44px] rounded-full overflow-hidden mr-3">
-            <img src="https://i.ibb.co/G2jbbtS/cat1.jpg"/>
-          </div>
-          <div class="flex-1">
-            <p class="text-white">白爛貓 87分雜貨鋪</p>
-            <div class="flex items-center text-gray-400 text-2xl">
-              <div class="text-xl">5小時</div>
-              <div>．</div>
-              <div class="w-[14px]">
-                <img class="w-full" src="https://bruce-fe-fb.web.app/image/earth.svg"/>
-              </div>
+        <div class="loadBlock card pb-0 px-0 animate-pulse">
+          <!-- 貼文標題 -->
+          <div class="flex px-4 items-center mb-4">
+            <div class="w-[44px] h-[44px] rounded-full overflow-hidden mr-3bg-fb-input"></div>
+            <div class="flex content-evenly flex-wrap w-[200px] h-[50px]">
+              <div class="bg-fb-input h-[16px] w-[200px] rounded-full"></div>
+              <div class="bg-fb-input h-[12px] w-[100px] rounded-full"></div>
             </div>
           </div>
-          <button class="w-[12px] focus:outline-none">
-            <img src="https://bruce-fe-fb.web.app/image/more.svg" alt="" />
-          </button>
+          <div class="w-full h-[260px] bg-fb-input"></div>
         </div>
-        <!-- 貼文內文 -->
-        <p class="text-3xl text-gray-300 mt-3 px-4">【白爛貓】87分雜貨鋪 隆重開幕囉！！</p>
-        <!-- 貼文圖片 -->
-        <a href="javascript:;" class="block mt-3">
-          <div class="w-full aspect-w-16 aspect-h-15 overflow-hidden">
-            <img src="https://i.ibb.co/HNB3t6w/cat4.jpg" class="object-cover w-full"/>
-          </div>
-          <div class="bg-fb-input w-full px-4 py-2 text-white">
-            <p class="text-gray-400 text-xl">WWW.xxxxxx.COM</p>
-            <p class="text-2xl">白爛貓 87分雜貨鋪開幕囉！！</p>
-          </div>
-        </a>
-        <!-- 讚、留言 -->
-        <div class="px-4">
-          <div class="border-b border-gray-700 flex justify-between py-3">
-            <div class="flex items-center">
-              <div class="w-[20px] mr-2">
-                <img src="https://bruce-fe-fb.web.app/image/like-blue.svg" />
-              </div>
-              <p class="text-xl text-gray-400">990</p>
-            </div>
-            <div class="flex items-center">
-              <p class="text-xl text-gray-400 mr-2">4則留言</p>
-              <p class="text-xl text-gray-400">1次分享</p>
-            </div>
-          </div>
-          <div class="flex items-center py-2">
-            <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
-              <div class="w-[16px]">
-                <img src="https://bruce-fe-fb.web.app/image/like.svg"alt=""/>
-              </div>
-              <p class="text-gray-400 text-xl pl-1.5">讚</p>
-            </button>
-            <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
-              <div class="w-[16px]">
-                <img src="https://bruce-fe-fb.web.app/image/chat.svg"alt=""/>
-              </div>
-              <p class="text-gray-400 text-xl pl-1.5">留言</p>
-            </button>
-            <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
-              <div class="w-[16px]">
-                <img src="https://bruce-fe-fb.web.app/image/share.svg"alt=""/>
-              </div>
-              <p class="text-gray-400 text-xl pl-1.5">分享</p>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="postWall card pb-0 px-0 hidden">
-        <!-- 貼文標題 -->
-        <div class="flex px-4">
-          <div class="w-[44px] rounded-full overflow-hidden mr-3">
-            <img src="https://i.ibb.co/G2jbbtS/cat1.jpg"/>
-          </div>
-          <div class="flex-1">
-            <p class="text-white">白爛貓 87分雜貨鋪</p>
-            <div class="flex items-center text-gray-400 text-2xl">
-              <div class="text-xl">5小時</div>
-              <div>．</div>
-              <div class="w-[14px]">
-                <img class="w-full" src="https://bruce-fe-fb.web.app/image/earth.svg"/>
-              </div>
-            </div>
-          </div>
-          <button class="w-[12px] focus:outline-none">
-            <img src="https://bruce-fe-fb.web.app/image/more.svg" alt="" />
-          </button>
-        </div>
-        <!-- 貼文內文 -->
-        <p class="text-3xl text-gray-300 mt-3 px-4">【白爛貓】87分雜貨鋪 隆重開幕囉！！</p>
-        <!-- 貼文圖片 -->
-        <a href="javascript:;" class="block mt-3">
-          <div class="w-full aspect-w-16 aspect-h-15 overflow-hidden">
-            <img src="https://i.ibb.co/Nrnh9Xy/cat5.jpg" class="object-cover w-full"/>
-          </div>
-          <div class="bg-fb-input w-full px-4 py-2 text-white">
-            <p class="text-gray-400 text-xl">WWW.xxxxxx.COM</p>
-            <p class="text-2xl">白爛貓 87分雜貨鋪開幕囉！！</p>
-          </div>
-        </a>
-        <!-- 讚、留言 -->
-        <div class="px-4">
-          <div class="border-b border-gray-700 flex justify-between py-3">
-            <div class="flex items-center">
-              <div class="w-[20px] mr-2">
-                <img src="https://bruce-fe-fb.web.app/image/like-blue.svg" />
-              </div>
-              <p class="text-xl text-gray-400">990</p>
-            </div>
-            <div class="flex items-center">
-              <p class="text-xl text-gray-400 mr-2">4則留言</p>
-              <p class="text-xl text-gray-400">1次分享</p>
-            </div>
-          </div>
-          <div class="flex items-center py-2">
-            <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
-              <div class="w-[16px]">
-                <img src="https://bruce-fe-fb.web.app/image/like.svg"alt=""/>
-              </div>
-              <p class="text-gray-400 text-xl pl-1.5">讚</p>
-            </button>
-            <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
-              <div class="w-[16px]">
-                <img src="https://bruce-fe-fb.web.app/image/chat.svg"alt=""/>
-              </div>
-              <p class="text-gray-400 text-xl pl-1.5">留言</p>
-            </button>
-            <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
-              <div class="w-[16px]">
-                <img src="https://bruce-fe-fb.web.app/image/share.svg"alt=""/>
-              </div>
-              <p class="text-gray-400 text-xl pl-1.5">分享</p>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="postWall card pb-0 px-0 hidden">
-        <!-- 貼文標題 -->
-        <div class="flex px-4">
-          <div class="w-[44px] rounded-full overflow-hidden mr-3">
-            <img src="https://i.ibb.co/G2jbbtS/cat1.jpg"/>
-          </div>
-          <div class="flex-1">
-            <p class="text-white">白爛貓 87分雜貨鋪</p>
-            <div class="flex items-center text-gray-400 text-2xl">
-              <div class="text-xl">5小時</div>
-              <div>．</div>
-              <div class="w-[14px]">
-                <img class="w-full" src="https://bruce-fe-fb.web.app/image/earth.svg"/>
-              </div>
-            </div>
-          </div>
-          <button class="w-[12px] focus:outline-none">
-            <img src="https://bruce-fe-fb.web.app/image/more.svg" alt="" />
-          </button>
-        </div>
-        <!-- 貼文內文 -->
-        <p class="text-3xl text-gray-300 mt-3 px-4">【白爛貓】87分雜貨鋪 隆重開幕囉！！</p>
-        <!-- 貼文圖片 -->
-        <a href="javascript:;" class="block mt-3">
-          <div class="w-full aspect-w-16 aspect-h-15 overflow-hidden">
-            <img src="https://i.ibb.co/XsvbW3z/cat6.jpg" class="object-cover w-full"/>
-          </div>
-          <div class="bg-fb-input w-full px-4 py-2 text-white">
-            <p class="text-gray-400 text-xl">WWW.xxxxxx.COM</p>
-            <p class="text-2xl">白爛貓 87分雜貨鋪開幕囉！！</p>
-          </div>
-        </a>
-        <!-- 讚、留言 -->
-        <div class="px-4">
-          <div class="border-b border-gray-700 flex justify-between py-3">
-            <div class="flex items-center">
-              <div class="w-[20px] mr-2">
-                <img src="https://bruce-fe-fb.web.app/image/like-blue.svg" />
-              </div>
-              <p class="text-xl text-gray-400">990</p>
-            </div>
-            <div class="flex items-center">
-              <p class="text-xl text-gray-400 mr-2">4則留言</p>
-              <p class="text-xl text-gray-400">1次分享</p>
-            </div>
-          </div>
-          <div class="flex items-center py-2">
-            <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
-              <div class="w-[16px]">
-                <img src="https://bruce-fe-fb.web.app/image/like.svg"alt=""/>
-              </div>
-              <p class="text-gray-400 text-xl pl-1.5">讚</p>
-            </button>
-            <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
-              <div class="w-[16px]">
-                <img src="https://bruce-fe-fb.web.app/image/chat.svg"alt=""/>
-              </div>
-              <p class="text-gray-400 text-xl pl-1.5">留言</p>
-            </button>
-            <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
-              <div class="w-[16px]">
-                <img src="https://bruce-fe-fb.web.app/image/share.svg"alt=""/>
-              </div>
-              <p class="text-gray-400 text-xl pl-1.5">分享</p>
-            </button>
-          </div>
-        </div>
-      </div>
 
-      <!-- 貼文牆 (Loading) -->
-      <div class="loadBlock card pb-0 px-0 animate-pulse">
-        <!-- 貼文標題 -->
-        <div class="flex px-4 items-center mb-4">
-          <div class="w-[44px] h-[44px] rounded-full overflow-hidden mr-3bg-fb-input"></div>
-          <div class="flex content-evenly flex-wrap w-[200px] h-[50px]">
-            <div class="bg-fb-input h-[16px] w-[200px] rounded-full"></div>
-            <div class="bg-fb-input h-[12px] w-[100px] rounded-full"></div>
-          </div>
-        </div>
-        <div class="w-full h-[260px] bg-fb-input"></div>
       </div>
-      <div class="loadBlock card pb-0 px-0 animate-pulse">
-        <!-- 貼文標題 -->
-        <div class="flex px-4 items-center mb-4">
-          <div class="w-[44px] h-[44px] rounded-full overflow-hidden mr-3bg-fb-input"></div>
-          <div class="flex content-evenly flex-wrap w-[200px] h-[50px]">
-            <div class="bg-fb-input h-[16px] w-[200px] rounded-full"></div>
-            <div class="bg-fb-input h-[12px] w-[100px] rounded-full"></div>
-          </div>
-        </div>
-        <div class="w-full h-[260px] bg-fb-input"></div>
-      </div>
-      <div class="loadBlock card pb-0 px-0 animate-pulse">
-        <!-- 貼文標題 -->
-        <div class="flex px-4 items-center mb-4">
-          <div class="w-[44px] h-[44px] rounded-full overflow-hidden mr-3bg-fb-input"></div>
-          <div class="flex content-evenly flex-wrap w-[200px] h-[50px]">
-            <div class="bg-fb-input h-[16px] w-[200px] rounded-full"></div>
-            <div class="bg-fb-input h-[12px] w-[100px] rounded-full"></div>
-          </div>
-        </div>
-        <div class="w-full h-[260px] bg-fb-input"></div>
-      </div>
-
     </div>
+    <div id="p2" class="w-full page text-white hidden"># Watch</div>
+    <div id="p3" class="w-full page text-white hidden"># Marketplace</div>
+    <div id="p4" class="w-full page text-white hidden"># Game</div>
+
 
     <!-- 右側聯絡人 -->
     <div id="right-block" class="w-full hidden sticky top-main-span max-w-[360px] h-full pl-6 lg:block z-30">

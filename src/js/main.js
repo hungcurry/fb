@@ -23,8 +23,7 @@ import Swiper, { Navigation, Pagination } from 'swiper'
 
 
 
-
-
+//  ------------- header相關 -------------
 const popoverBtn = document.querySelectorAll('.nav-btn');
 const popoverPanel = document.querySelectorAll('.popover-panel');
 
@@ -54,6 +53,38 @@ window.addEventListener('click' , function(e){
 });
 popoverBtn.forEach( function(item){
   item.addEventListener('click', clickPopoverFn)
+});
+
+//  ------------- header menu相關 -------------
+const navBtn = document.querySelectorAll(".nav");
+const page = document.querySelectorAll(".page");
+let idx = 0;
+page[idx].classList.remove('hidden');
+
+function btnClickFn(e){
+  e.stopPropagation();
+  let nav = e.currentTarget;
+  let id = Number(nav.getAttribute('id').substr(1));
+
+  for (let i = 0; i < navBtn.length; i++) {
+    let svgAll = navBtn[i].children[0].children[0];
+    navBtn[i].classList.remove('js-nav-active');
+    svgAll.classList.remove('text-fb');
+  };
+  nav.classList.add('js-nav-active');
+  nav.children[0].children[0].classList.add('text-fb');
+  openPage(id);
+};
+function openPage(index) {
+  page.forEach( function(item , idx){
+    item.classList.add('hidden');
+    if(index === idx + 1) {
+      item.classList.remove('hidden');
+    }
+  })
+};
+navBtn.forEach( function(item){
+  item.addEventListener('click', btnClickFn);
 });
 
 //  ------------- 左側相關 -------------
