@@ -269,7 +269,7 @@
 
         <!-- 限時動態 -->
         <div class="relative">
-          <div class="flex overflow-x-auto no-scrollbar lg:px-6" id="story-list">
+          <div class="flex overflow-x-auto scrollbar lg:px-6" id="story-list">
             <div class="flex-1 px-[4px] min-w-[120px] cursor-pointer">
               <div class="h-full flex flex-col">
                 <div class="overflow-hidden flex-1">
@@ -900,7 +900,39 @@
         </div>
       </div>
     </div>
-    <div id="p3" class="w-full page text-white hidden"># Marketplace</div>
+    <!-- Marketplace -->
+    <div id="p3" class="w-full page text-white hidden">
+      <div class="w-full max-w-[744px] mx-auto px-4 pb-10">
+        <div class="card">
+          <p class="text-left text-3xl pl-3 text-gray-400 mb-6">依照類別瀏覽</p>
+          <div class="scrollbar flex overflow-x-auto pb-4">
+            <div class="shrink-0 rounded-lg bg-fb-active hover:bg-fb-input flex items-center justify-center cursor-pointer mr-3 mb-3">
+              <p class="text-gray-400 text-2xl py-3 px-6">所有商品</p>
+            </div>
+            <div class="shrink-0 rounded-lg bg-fb-active hover:bg-fb-input flex items-center justify-center cursor-pointer mr-3 mb-3">
+              <p class="text-gray-400 text-2xl py-3 px-6">文具</p>
+            </div>
+            <div class="shrink-0 rounded-lg bg-fb-active hover:bg-fb-input flex items-center justify-center cursor-pointer mr-3 mb-3">
+              <p class="text-gray-400 text-2xl py-3 px-6">居家生活</p>
+            </div>
+            <div class="shrink-0 rounded-lg bg-fb-active hover:bg-fb-input flex items-center justify-center cursor-pointer mr-3 mb-3">
+              <p class="text-gray-400 text-2xl py-3 px-6">精選系列</p>
+            </div>
+            <div class="shrink-0 rounded-lg bg-fb-active hover:bg-fb-input flex items-center justify-center cursor-pointer mr-3 mb-3">
+              <p class="text-gray-400 text-2xl py-3 px-6">配件</p>
+            </div>
+            <div class="shrink-0 rounded-lg bg-fb-active hover:bg-fb-input flex items-center justify-center cursor-pointer mr-3 mb-3">
+              <p class="text-gray-400 text-2xl py-3 px-6">派對遊戲</p>
+            </div>
+            <div class="shrink-0 rounded-lg bg-fb-active hover:bg-fb-input flex items-center justify-center cursor-pointer mr-3 mb-3">
+              <p class="text-gray-400 text-2xl py-3 px-6">新品上架</p>
+            </div>
+          </div> 
+        </div>
+        <!-- renderCardList -->
+        <div class="flex flex-wrap justify-between mx-[-7.5px]" id="marketCard"></div>
+      </div>
+    </div>
     <div id="p4" class="w-full page text-white hidden"># Game</div>
 
 
@@ -911,12 +943,12 @@
       <div class="flex items-center w-full py-2 px-2 mb-3 rounded cursor-pointer text-white relative ad-block">
         <div class="w-[130px] mr-6 shrink-0">
           <a href="javascript:;" class="rounded-2xl block">
-            <img class="object-cover user-drag" src="https://scontent.ftpe7-3.fna.fbcdn.net/v/t45.1600-4/274347005_23850348510820767_5397592372270915344_n.jpg?stp=cp0_dst-jpg_p960x960_q75_spS444&_nc_cat=108&ccb=1-5&_nc_sid=67cdda&_nc_ohc=XQqD7BqjnZwAX8xzGOE&_nc_ht=scontent.ftpe7-3.fna&oh=00_AT_Yb30gXEOkV-YEdanwMKO5MOgzlVTHT7AlJ1ni_KAfvQ&oe=623BE831" alt="" />
+            <img class="object-cover user-drag" src="https://i.ibb.co/gj8K19F/flote.jpg" alt="" />
           </a>
         </div>
         <div>
-          <p class="mb-3 select-none">HOLA 特力和樂</p>
-          <p class="text-xl text-gray-400 tracking-wide select-none">trplus.com.tw</p>
+          <p class="mb-3 select-none">贈品還是送折扣碼 NFJ54</p>
+          <p class="text-xl text-gray-400 tracking-wide select-none">flotemp.com</p>
         </div>
         <button class="popover-btn w-[36px] h-[36px] absolute right-3 top-[-5px] hidden z-10 js-adBtn" id="ad-btn1">
           <img src="https://bruce-fe-fb.web.app/image/more.svg" alt="">
@@ -950,12 +982,12 @@
       <div class="flex items-center w-full py-2 px-2 mb-6 rounded cursor-pointer text-white relative ad-block">
         <div class="w-[130px] mr-6 shrink-0">
           <a href="javascript:;" class="rounded-2xl block">
-            <img class="object-cover user-drag" src="https://scontent.ftpe8-3.fna.fbcdn.net/v/t45.1600-4/275511040_23849536778630071_6020715533438144923_n.jpg?stp=cp0_dst-jpg_p296x100_q75_spS444&_nc_cat=1&ccb=1-5&_nc_sid=67cdda&_nc_ohc=4BhLrJKfgxkAX-Mpysp&_nc_ht=scontent.ftpe8-3.fna&oh=00_AT8DPITOxIkfPUCsRMhk2V87_cY84-Ikd2E81F6fbVmDBQ&oe=623BB449" alt="" />
+            <img class="object-cover user-drag" src="https://i.ibb.co/jLPdjhB/222.jpg" alt="" />
           </a>
         </div>
         <div>
-          <p class="mb-3 select-none">ASUS ExpertCenter 商用桌上型電腦  購機享回饋!</p>
-          <p class="text-xl text-gray-400 tracking-wide select-none">shop.asus.com</p>
+          <p class="mb-3 select-none">一鍵下單｜24 小時即刻出貨</p>
+          <p class="text-xl text-gray-400 tracking-wide select-none"></p>
         </div>
         <button class="popover-btn w-[36px] h-[36px] absolute right-3 top-[-5px] hidden z-10 js-adBtn" id="ad-btn2">
           <img src="https://bruce-fe-fb.web.app/image/more.svg" alt="">

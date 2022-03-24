@@ -9,6 +9,7 @@ body{
   font-size: 1.6rem;
   font-weight: 400;
 }
+
 :focus{ outline: 0;}
 ::selection { 
   color: var.$white; 
@@ -61,5 +62,5 @@ a{
   z-index: 2;
 }
 * {
-  outline: 1px solid red;
+  // outline: 1px solid red;
 }

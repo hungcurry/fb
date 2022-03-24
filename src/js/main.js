@@ -408,6 +408,49 @@ function renderPostWall(){
 };
 renderPostWall();
 
+//  ------------- marketCard相關-------------
+const marketCard = document.querySelector("#marketCard");
+let cardObj = {
+  uuid: 'feec8521-8cf5-41e0-aa0d-3bac8c6c6213',
+  apiPath:'https://course-ec-api.hexschool.io',
+  products: [],
+};
+axios.get(`${cardObj.apiPath}/api/${cardObj.uuid}/ec/products`)
+  .then((res)=>{
+    cardObj.products = res.data.data;
+    renderCardList();
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+
+function renderCardItem(obj) {
+  const item = `
+  <div class="px-3 w-2/4 lg:w-2/6 mb-10">
+    <div class="card flex flex-col h-full">
+      <div class="overflow-hidden rounded-lg mb-2">
+        <img class="object-cover hover:scale-105 duration-300" src="${obj.imageUrl[0]}" alt="">
+      </div>
+      <div class="flex-auto">
+        <p>${obj.title}</p>
+      </div>
+      <p class="mb-2">NT$${obj.price}</p>
+      <div class="text-center border border-fb-active hover:bg-fb-input rounded-xl py-3 cursor-pointer">
+        <button class="text-2xl text-gray-400">詳細資訊</button>
+      </div>
+    </div>
+  </div>
+  `
+  return item;
+};
+function renderCardList() {
+  let htmlStr = '';
+  cardObj.products.forEach((item) => {
+    htmlStr += renderCardItem(item);
+  });
+  marketCard.innerHTML = htmlStr;
+};
+
 //  ------------- modal-------------
 const modal = document.querySelector('#modal');
 const loginBtn = document.querySelector('#login');
