@@ -92,3 +92,111 @@
   -webkit-user-drag: none;
 }
 
+// grid區塊
+.base {
+  border-radius: 0.5rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  cursor: pointer;
+  &::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.6s;
+    pointer-events: none;
+  }
+  &:hover::before{
+    background-image: linear-gradient(180deg, transparent 50% , #ffffff88 100% );
+  }
+}
+.box {
+  display: grid;
+  height: 400px;
+  grid-template-columns: 37% 12% 1fr;
+  grid-template-rows: 49% 22% 1fr;
+  justify-content: center;
+  align-content: center;
+  grid-auto-columns: 100px;
+  grid-auto-rows: 100px;
+  gap: 1rem;
+} 
+.box-1 {
+  grid-column: 1;
+  grid-row: 1 / span 3;
+  background-image: url(https://i.ibb.co/88zyG9z/1.jpg);
+} 
+.box-2 {
+  grid-column: 2 / span 2;
+  grid-row: 1;
+  background-image: url(https://i.ibb.co/4pLb8FP/2.jpg);
+}
+.box-3 {
+  grid-column: 2 / span 1;
+  grid-row: 3 / span 1;
+  background-image: url(https://i.ibb.co/PZ8x0tD/3.jpg);
+  @media screen and (min-width:768px){
+    grid-row: 2 / span 2;
+  }
+}
+.box-4 {
+  grid-column: 2 / span 2;
+  grid-row: 2 / span 1;
+  background-image: url(https://i.ibb.co/wJ56jkf/4.jpg);
+  @media screen and (min-width:768px){
+    grid-column: -2 ;
+    grid-row: 2 / span 1;
+  }
+}
+.box-5 {
+  grid-column: -2 ;
+  grid-row: 3 / span 1;
+  background-image: url(https://i.ibb.co/bN0f1z3/5.jpg);
+}
+
+.masonry{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: 150px;
+  grid-auto-flow: row dense ;
+  justify-content: center;
+  align-content: center;
+  gap: 1rem;
+}
+.item-span-2{
+  grid-row: span 2;
+}
+.item-span-3{
+  grid-row: span 3;
+}
+.item-span-4{
+  grid-row: span 4;
+}
+.item-span-full{
+  grid-column-end: auto;
+}
+@media screen and (min-width: 768px) {
+  .item-span-full{
+    grid-column: 1 / span 3;
+    grid-row: span 2;
+  }
+}
+.item:nth-child(n){
+  background-image: url(https://i.ibb.co/88zyG9z/3.jpg);
+}
+.item:nth-child(2n){
+  background-image: url(https://i.ibb.co/3CJ3YYL/5.jpg);
+}
+.item:nth-child(3n){
+  background-image: url(https://i.ibb.co/z5wXhmN/7.jpg);
+}
+.item:nth-child(4n){
+  background-image: url(https://i.ibb.co/wJ56jkf/4.jpg);
+}
+.item:nth-child(5n){
+  background-image: url(https://i.ibb.co/3CJ3YYL/6.jpg);
+} 
