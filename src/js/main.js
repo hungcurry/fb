@@ -182,12 +182,15 @@ function renderLeftList() {
 renderLeftList();
 
 //  ------------- 右側相關 -------------
+const rightBlockList = document.querySelector("#right-block");
 const contactPerson = document.querySelector("#contactPerson");
 let rightAry = [];
 axios.get('https://randomuser.me/api/?results=20')
   .then((res)=>{
     rightAry = res.data.results;
     renderRightList();
+    // enter();
+    // leave();
   })
   .catch((err) => {
     console.log(err);
@@ -329,7 +332,7 @@ function renderStoryItem() {
     const elDiv = document.createElement('div');
     elDiv.classList.add('flex-1' , 'px-[4px]' , 'min-w-[120px]' ,'cursor-pointer');
     const item = `
-    <div class="relative overflow-hidden" id="story-${i}">
+    <a href="https://google.com/" class="relative overflow-hidden" id="story-${i}">
       <div id="story-mask-${i}" class="hidden absolute w-full h-full top-0 left-0 bg-orange/30 z-20"></div>
       <div class="w-[32px] h-[32px] absolute top-4 left-4 ring-4 ring-fb bg-fb-card rounded-full flex justify-center items-center z-10">
         <p class="text-white text-sm">阿貓</p>
@@ -337,7 +340,7 @@ function renderStoryItem() {
       <div class="absolute w-full h-full top-0 left-0 bg-gradient-to-b from-orange-600/30 to-transparent"></div>
       <img class="w-full h-full duration-500 select-none" src="https://i.ibb.co/9sPFqKz/cat2.jpg"/>
       <p class="absolute bottom-2 left-2 text-white">白爛貓</p>
-    </div>
+    </a>
     `
     elDiv.innerHTML = item;
 
@@ -358,6 +361,54 @@ function renderStoryItem() {
   }
 }
 renderStoryItem();
+
+// 捲軸滑動
+let startX = 0;
+let startScroll = 0;
+let startTime = 0;
+let moved = false;
+function startDrag(e){
+  storyList.classList.add('active');
+  startX = e.pageX;
+  startScroll = storyList.scrollLeft;
+  startTime = new Date().getTime();
+  moved = false;
+};
+function dragHandler(e){
+  // 取消 文字選取 圖片拖移..等事件
+  e.preventDefault();
+  let move = e.pageX - startX;
+  if(storyList.classList.contains('active')){
+    moved = true;
+    storyList.scrollLeft = startScroll - move ;
+  }
+};
+function stopDrag(e){
+  storyList.classList.remove('active');
+  let leaveTime = new Date().getTime();
+  // 手勢方向判斷
+  if (leaveTime - startTime <= 500) {
+    if (e.pageX > startX) {
+      console.log("move right");
+    } else if (e.pageX < startX) {
+      console.log("move left");
+    }
+  }
+};
+// 防呆滑動,觸發連結
+const storyLink = document.querySelectorAll('#story-list a');
+storyLink.forEach(link => {
+  link.addEventListener('click' , function(e){
+    if(moved){
+      e.preventDefault();
+    }
+  });
+});
+
+storyList.addEventListener("mousedown", startDrag); 
+storyList.addEventListener("mousemove", dragHandler);
+storyList.addEventListener("mouseup", stopDrag); 
+storyList.addEventListener("mouseleave", stopDrag);
 
 //  ------------- 包廂輪播相關 -------------
 function renderLiveItem() {

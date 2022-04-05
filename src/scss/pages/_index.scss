@@ -45,7 +45,7 @@
 
 /*  Chrome, Safari and Opera */
 .no-scrollbar::-webkit-scrollbar {
-  width : 0  !important;
+  display: none;
 }
 /* Firefox */
 .no-scrollbar {
@@ -68,6 +68,14 @@
 .js-nav-active{
   border-color: #2e89ff !important;
 }
+.message{
+  visibility: hidden;
+}
+.js-contactPerson:hover > .message,
+.js-contactPerson:focus > .message,
+.js-contactPerson:focus-within > .message{
+  visibility: visible;
+}
 
 // 右側相關 
 .js-contactPerson::before{
@@ -79,14 +87,6 @@
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
-}
-.message{
-  visibility: hidden;
-}
-.js-contactPerson:hover > .message,
-.js-contactPerson:focus > .message,
-.js-contactPerson:focus-within > .message{
-  visibility: visible;
 }
 .user-drag {
   -webkit-user-drag: none;
