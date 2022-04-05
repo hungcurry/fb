@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "pages": "gh-pages -d dist",
     "deploy": "cross-env NODE_ENV=production webpack",
     "build": "cross-env NODE_ENV=development webpack",
     "dev": "cross-env NODE_ENV=development webpack serve",
@@ -26,6 +27,7 @@
     "cross-env": "^7.0.3",
     "css-loader": "^6.6.0",
     "cssnano": "^5.0.17",
+    "gh-pages": "^3.2.3",
     "html-webpack-plugin": "^5.5.0",
     "image-webpack-loader": "^8.1.0",
     "mini-css-extract-plugin": "^2.5.3",
