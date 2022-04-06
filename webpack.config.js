@@ -20,7 +20,7 @@ const footerTemplate = fs.readFileSync(__dirname + '/src/template/footer.html');
 let htmlPages = ['index']; 
 let multipleHtmlPlugins = htmlPages.map((name) => {
   return new HtmlWebpackPlugin({
-    title: 'Custom template',
+    title: '白爛貓粉絲團',
     template: path.resolve(__dirname, `./src/pages/${name}.html`),
     filename: `${name}.html`,
     header: headerTemplate,
