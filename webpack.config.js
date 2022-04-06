@@ -26,7 +26,7 @@ let multipleHtmlPlugins = htmlPages.map((name) => {
     header: headerTemplate,
     footer: footerTemplate,
     inject: 'body',
-    chunks: ['main','vendor',`${name}` ],
+    chunks: ['main','vendor',`${name}`],
     // excludeChunks: [`${name}`]
   });
 });
